@@ -2,6 +2,8 @@
 
 Front-end et back-end (API) du « Baromètre Numérique », plateforme de transparence des services numériques de la Gendarmerie Nationale.
 
+Accessible à l'adresse: https://www.gendarmerie.interieur.gouv.fr/barometre-numerique/
+
 **⚠️ Version Bêta** : Le site, le code source et sa documentation sont encore en phase de développement.
 
 ## Installer et lancer l'application (développement)

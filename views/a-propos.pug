@@ -1,0 +1,15 @@
+doctype html
+html(data-fr-scheme="system")
+  head 
+    include includes/head.html
+    title= title
+
+  body
+    include includes/header.html
+    include includes/a-propos.html
+    include includes/footer.html
+
+    script.
+      var pageId = "#{pageId}"
+
+    include includes/footer-scripts.html

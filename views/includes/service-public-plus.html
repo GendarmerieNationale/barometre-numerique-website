@@ -1,0 +1,158 @@
+<div class="fr-container bn-feature-block bn-feature-text">
+  <feature-figure data-url="api/service-public-plus/total" data-field="exp_count">...</feature-figure>
+  <div class="fr-h6">
+    avis déposés sur <a href="https://www.plus.transformation.gouv.fr/experiences"
+                                         target="_blank">ServicesPublics+</a> à propos de la Gendarmerie Nationale
+  </div>
+  <p class="fr-mt-7w fr-text--sm fr-text--light">
+    <a href="information-donnees#info-spp">Information sur les données</a>
+  </p>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+    <div class="fr-col-10 fr-col-sm-4">
+      <feature-figure data-display-size="sm"
+                      data-url="api/service-public-plus/total"
+                      data-field="exp_pos_count">
+      </feature-figure>
+      <p>expériences positives</p>
+    </div>
+    <div class="fr-col-10 fr-col-sm-4">
+      <feature-figure data-display-size="sm"
+                      data-url="api/service-public-plus/total"
+                      data-field="exp_moy_count">
+      </feature-figure>
+      <p>expériences neutres</p>
+    </div>
+    <div class="fr-col-10 fr-col-sm-4">
+      <feature-figure data-display-size="sm"
+                      data-url="api/service-public-plus/total"
+                      data-field="exp_neg_count">
+      </feature-figure>
+      <p>expériences négatives</p>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <h2 class="fr-h6">Origine géographique des avis</h2>
+  <map-parent>
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-mt-5w">
+      <div class="fr-col-11 fr-col-sm-4">
+        <map-chart data-url="api/service-public-plus/map"
+                   data-transform="spplusMap">
+        </map-chart>
+      </div>
+
+      <div class="fr-col-1"></div>
+
+      <div class="fr-col-11 fr-col-sm-4">
+        <map-breadcrumbs></map-breadcrumbs>
+        <div class="fr-mt-7w">
+          <div style="display:none;"><chart-title></chart-title></div>
+          <map-detail data-url="api/service-public-plus/map-detail"
+                      data-render-fct="service-public-plus">
+          </map-detail>
+        </div>
+      </div>
+    </div>
+  </map-parent>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <h2 class="fr-h6">Nombre d'expériences déposées</h2>
+  <chart-parent>
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+      <tag-select-group data-tags="week,month,year"
+                        data-default-tag="year">
+      </tag-select-group>
+    </div>
+
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-mt-5w">
+      <div class="fr-col-11 fr-col-sm-9 fr-col-md-8 fr-col-lg-7 fr-col-xl-6">
+        <timeline-chart data-url="api/service-public-plus/timeline"
+                        data-label-key="time_dim"
+                        data-value-key="exp_count">
+        </timeline-chart>
+      </div>
+    </div>
+  </chart-parent>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+    <div class="fr-col-10 fr-col-sm-6">
+      <feature-figure data-display-size="sm"
+                      data-url="api/service-public-plus/total"
+                      data-transform="spplusPercentageResponse">
+      </feature-figure>
+      <p>des avis ont reçu une réponse</p>
+    </div>
+    <div class="fr-col-10 fr-col-sm-6">
+      <feature-figure data-display-size="sm"
+                      data-url="api/service-public-plus/total"
+                      data-field="avg_days_to_response">
+      </feature-figure>
+      <p>jours avant une réponse en moyenne</p>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+    <div class="fr-col-10 fr-col-sm-6">
+      <h2 class="fr-h6">Structures concernées par les avis</h2>
+      <chart-parent>
+        <category-chart data-url="api/service-public-plus/structure"
+                        data-transform="spplusStructures">
+        </category-chart>
+      </chart-parent>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <h2 class="fr-h6">Avis par thématique</h2>
+  <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+    <div class="fr-col-10 fr-col-sm-4">
+      <p>Pourcentage d'avis positifs</p>
+      <chart-parent>
+        <category-chart data-url="api/service-public-plus/tags"
+                        data-transform="spplusTags">
+        </category-chart>
+      </chart-parent>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="fr-container">
+  <div class="fr-callout fr-callout--brown-caramel">
+    <br>
+    <p class="fr-callout__title">J'ai réalisé une démarche administrative</p>
+    <br>
+    <p class="fr-callout__text">
+        Je donne mon avis sur Services Publics +. L'administration concernée me répondra.
+    </p>
+    <br>
+    <button class="fr-btn">
+        <a href="https://www.plus.transformation.gouv.fr/experience/step_1?pk_campaign=GN-cyberimpact" target="_blank">Je donne mon avis -></a>
+    </button>
+    <span style="float:right" class="fr-mt-3w"><img src="svg/logo_spp.svg" alt="Logo Services Publics +" width="100px" /></span>
+  </div>
+</div>
+<br>

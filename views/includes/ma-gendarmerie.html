@@ -1,0 +1,77 @@
+<div class="fr-container bn-feature-block bn-feature-text">
+  <feature-figure data-field="n_contact_total" data-url="api/ma-gendarmerie/n-contact-total"></feature-figure>
+  <div class="fr-h6">prises de contact en ligne avec <a
+      href="https://www.gendarmerie.interieur.gouv.fr/a-votre-contact/contacter-la-gendarmerie/ma-gendarmerie"
+      target="_blank">Ma Gendarmerie</a> depuis sa création en 2018
+  </div>
+  <p class="fr-mt-7w fr-text--sm fr-text--light">
+    <a href="information-donnees#info-ma-gendarmerie">Information sur les données</a>
+  </p>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <h2 class="fr-h6">Motifs des prises de contact</h2>
+  <chart-parent>
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+      <tag-select-group data-tags="month,year"
+                        data-default-tag="year">
+      </tag-select-group>
+    </div>
+
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+      <div class="fr-col-11 fr-col-sm-9 fr-col-md-7 fr-col-lg-5 fr-col-xl-5">
+        <category-chart data-url="api/ma-gendarmerie/n-contact-category"
+                        data-transform="maGendarmerieNContactMotif">
+        </category-chart>
+      </div>
+    </div>
+  </chart-parent>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <h2 class="fr-h6">Nombre de prises de contact</h2>
+  <chart-parent>
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+      <tag-select-group data-tags="week,month,year"
+                        data-default-tag="month">
+      </tag-select-group>
+    </div>
+
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+      <div class="fr-col-11 fr-col-sm-9 fr-col-md-8 fr-col-lg-7 fr-col-xl-6">
+        <timeline-chart data-url="api/ma-gendarmerie/n-contact-timeline"
+                        data-label-key="time_dim"
+                        data-value-key="cnt">
+        </timeline-chart>
+      </div>
+    </div>
+  </chart-parent>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <h2 class="fr-h6">Horaires d'affluence</h2>
+  <chart-parent>
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+      <tag-select-group
+          data-default-tag="daily-affluence">
+      </tag-select-group>
+    </div>
+
+
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+      <div class="fr-col-11 fr-col-sm-9 fr-col-md-8 fr-col-lg-7 fr-col-xl-6">
+        <timeline-chart data-url="api/ma-gendarmerie/affluence"
+                        data-label-key="hour"
+                        data-value-key="n_contact"
+                        data-display-y-axis="false">
+        </timeline-chart>
+      </div>
+    </div>
+  </chart-parent>
+</div>

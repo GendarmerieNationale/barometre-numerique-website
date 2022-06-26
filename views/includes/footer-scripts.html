@@ -1,0 +1,55 @@
+<script>
+  selectMenuEntry(pageId);
+</script>
+
+<!-- Script en version es6 module et nomodule pour les navigateurs le ne supportant pas -->
+<script type="module" src="dsfr/dsfr.module.min.js"></script>
+<script type="text/javascript" nomodule src="dsfr/dsfr.nomodule.min.js"></script>
+
+<!--<script src="tarteaucitron.js-1.9.6/tarteaucitron.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--  tarteaucitronCustomText = {-->
+<!--    alertBigPrivacy: '<span class="fr-h4">À propos des cookies sur gendarmerie nationale</span><br>Bienvenue ! Ce site utilise des cookies pour mesurer la fréquentation du site afin d\'en améliorer le fonctionnement et l\'administration et, avec votre accord, pour évaluer la performance des campagnes d\'informations gouvernementales et améliorer votre expérience utilisateur, ainsi que pour vous proposer des services interactifs fournis par nos partenaires. Nous conservons votre choix pendant 6 mois. Vous pouvez changer ce choix à tout moment en vous rendant sur <a href="https://www.gendarmerie.interieur.gouv.fr/politique-de-confidentialite" data-at-name="donnees_personnelles_et_cookies" data-at-type="action">la page Données personnelles et cookies</a>.',-->
+<!--    all: 'Préférences pour tous les services. <a href="https://www.gendarmerie.interieur.gouv.fr/politique-de-confidentialite" data-at-name="donnees_personnelles_et_cookies" data-at-type="action">Données personnelles et cookies</a>',-->
+<!--    fallback: 'est désactivé. <p class="fr-text&#45;&#45;xs">Autorisez le dépôt de cookies pour accéder à cette fonctionnalité.</p>',-->
+<!--    ads: {-->
+<!--      title: "Campagnes d'informations gouvernementales",-->
+<!--      details: "Les campagnes d'informations gouvernementales permettent le partage d'informations utiles diffusées dans le cadre de grandes campagnes d'information, ou en cas de crise."-->
+<!--    },-->
+<!--  };-->
+
+<!--  // Only difference with GN: externalJS is not set to true-->
+<!--  tarteaucitron.init({-->
+<!--    hashtag: "#consentement",-->
+<!--    bodyPosition: top,-->
+<!--    useExternalCss: true,-->
+<!--    orientation: "bottom",-->
+<!--    removeCredit: true,-->
+<!--    readmoreLink: "https://www.gendarmerie.interieur.gouv.fr/politique-de-confidentialite",-->
+<!--    mandatory: false,-->
+<!--    showIcon: false,-->
+<!--  });-->
+
+<!--  tarteaucitron.user.atLibUrl = 'https://tag.aticdn.net/616427/smarttag.js';-->
+<!--  tarteaucitron.user.atMore = function () { /* add here your optionnal ATInternet.Tracker.Tag configuration */-->
+<!--    window.tag.page.set({-->
+<!--      analytics_id: null,-->
+<!--      atinternet_id: "616427",-->
+<!--      level2: 20,-->
+<!--      name: "barometre-numerique",-->
+<!--      // pageId is defined in the pug-->
+<!--      chapter1: pageId,-->
+<!--      chapter2: "",-->
+<!--      chapter3: "",-->
+<!--    });-->
+<!--  };-->
+<!--  (tarteaucitron.job = tarteaucitron.job || []).push('atinternet');-->
+<!--  // &#45;&#45; GN site: should we use that?-->
+<!--  // (tarteaucitron.job = tarteaucitron.job || []).push('atinternetcnil');-->
+<!--  // (tarteaucitron.job = tarteaucitron.job || []).push('atinternethybride');-->
+<!--  // tarteaucitron.user = {-->
+<!--  //   addthisPubId: "ra-5048c178442d9e01",-->
+<!--  //   gtagUa: null,-->
+<!--  //   atLibUrl: "https://tag.aticdn.net/616427/smarttag.js"-->
+<!--  // }-->
+<!--</script>-->

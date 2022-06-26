@@ -1,0 +1,109 @@
+<div class="fr-container bn-feature-block bn-feature-text">
+  <feature-figure data-field="n_signalements_total"
+                  data-url="api/perceval/n-signalements-total"></feature-figure>
+  <div class="fr-h6">signalements de fraude à la carte bancaire sur la plateforme
+    <a href="https://www.service-public.fr/particuliers/vosdroits/R46526" target="_blank">Perceval</a>
+    depuis sa création en 2021
+  </div>
+  <p class="fr-mt-7w fr-text--sm fr-text--light">
+    <a href="information-donnees#info-perceval">Information sur les données</a>
+  </p>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <h2 class="fr-h6">Nombre et montants des signalements</h2>
+  <chart-parent>
+    <div class="fr-grid-row fr-grid-row--center">
+      <tag-select-group data-tags="week,month,year"
+                        data-default-tag="week">
+      </tag-select-group>
+    </div>
+
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+      <div class="fr-col-11 fr-col-sm-9 fr-col-md-8 fr-col-lg-7 fr-col-xl-6">
+        <p>Nombre de signalements</p>
+        <timeline-chart data-url="api/perceval/signalements-timeline"
+                        data-label-key="time_dim"
+                        data-value-key="n_signalements">
+        </timeline-chart>
+      </div>
+
+      <div class="fr-col-11 fr-col-sm-9 fr-col-md-8 fr-col-lg-7 fr-col-xl-6">
+        <p>Somme des montants (€)</p>
+        <timeline-chart data-url="api/perceval/signalements-timeline"
+                        data-label-key="time_dim"
+                        data-value-key="amount">
+        </timeline-chart>
+      </div>
+    </div>
+  </chart-parent>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <h2 class="fr-h6">Montant moyen</h2>
+  <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+    <div class="fr-col-10 fr-col-sm-6">
+      <feature-figure data-field="montant_moy"
+                      data-transform="formatEuro"
+                      data-url="api/perceval/montant-moyen">
+      </feature-figure>
+      <p>par signalement</p>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <h2 class="fr-h6">Âge des victimes</h2>
+  <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+    <div class="fr-col-10 fr-col-sm-6">
+      <chart-parent>
+        <div class="fr-grid-row fr-grid-row--center">
+          <tag-select-group data-tags="month,year"
+                            data-default-tag="month">
+          </tag-select-group>
+        </div>
+
+        <div class="fr-grid-row fr-grid-row--center">
+          <div class="fr-col-10 fr-mt-5w">
+            <category-chart data-url="api/perceval/age-category"
+                            data-transform="percevalAgeCat">
+            </category-chart>
+          </div>
+        </div>
+      </chart-parent>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <h2 class="fr-h6">Origine géographique des signalements</h2>
+  <map-parent>
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-mt-5w">
+      <div class="fr-col-11 fr-col-sm-4">
+        <map-chart data-url="api/perceval/map"
+                   data-transform="percevalMap">
+        </map-chart>
+      </div>
+
+      <div class="fr-col-1"></div>
+
+      <div class="fr-col-11 fr-col-sm-4">
+        <map-breadcrumbs></map-breadcrumbs>
+        <div class="fr-mt-7w">
+          <div style="display:none;"><chart-title></chart-title></div>
+          <map-detail data-url="api/perceval/map-detail"
+                      data-render-fct="perceval">
+          </map-detail>
+        </div>
+      </div>
+    </div>
+  </map-parent>
+</div>

@@ -1,0 +1,44 @@
+<div class="fr-container bn-feature-block bn-feature-text">
+  <feature-figure data-field="n_reclamations"
+                  data-url="api/iggn/n-reclamations/2020"></feature-figure>
+  <div class="fr-h6">réclamations adressées à
+    <a href="https://www.gendarmerie.interieur.gouv.fr/contacts/reclamation-iggn" target="_blank">
+      l'Inspection Générale de la Gendarmerie Nationale
+    </a>
+    en 2020
+  </div>
+  <p class="fr-mt-7w fr-text--sm fr-text--light">
+    <a href="information-donnees#info-iggn">Information sur les données</a>
+  </p>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <h2 class="fr-h6">Réclamations (signalements externes)</h2>
+  <chart-parent>
+    <div class="fr-grid-row fr-grid-row--center">
+      <tag-select-group data-tags="years:2015-2020"
+                        data-default-tag="2019">
+      </tag-select-group>
+    </div>
+
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+      <div class="fr-col-10 fr-col-md-4 fr-m-5w">
+        <feature-figure
+            data-display-size="sm"
+            data-field="n_reclamations"
+            data-url="api/iggn/n-reclamations">
+        </feature-figure>
+        <p>réclamations de particuliers adressées à l'IGGN</p>
+      </div>
+
+      <div class="chart-container fr-col-10 fr-col-md-4 fr-m-5w">
+        <h2 class="fr-h6">Conclusion</h2>
+        <category-chart data-url="api/iggn/perc-manquements"
+                        data-transform="iggnManquements">
+        </category-chart>
+      </div>
+    </div>
+  </chart-parent>
+</div>

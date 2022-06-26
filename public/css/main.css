@@ -1,0 +1,77 @@
+.bn-block
+{
+    text-align: center;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.bn-feature-block
+{
+    padding-top: 4%;
+    text-align: center;
+}
+
+.bn-feature-text div
+{
+    color: var(--text-title-blue-france);
+}
+
+.bn-block-indicateurs
+{
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 3%;
+}
+
+.period-tags
+{
+    padding-top: 2%;
+}
+
+/* VBARCHART */
+
+.vbarchart
+{
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 10%;
+}
+
+.vbarchart p
+{
+  margin-bottom: 0;
+  margin-top: 3%;
+  text-align: left;
+}
+
+.vbarchart-subcat
+{
+  font-size: 90%;
+  text-align: left;
+  padding-left: 10%;
+}
+
+.vbarchart-bar
+{
+  background-color: var(--background-contrast-grey);
+}
+
+.vbarchart-bar-text-val
+{
+  float: right;
+}
+
+.vbarchart-bar-fg
+{
+  fill: var(--text-title-blue-france);
+}
+
+/* HBARCHART */
+
+.hbarchart
+{
+  pointer-events: none;
+}
+
+/* MAP RS */
+

@@ -1,0 +1,93 @@
+<div class="fr-container bn-feature-block bn-feature-text">
+  <feature-figure data-url="api/reseaux-sociaux/n-followers-twitter"></feature-figure>
+  <div class="fr-h6">abonnements aux comptes de la Gendarmerie Nationale sur Twitter</div>
+  <p class="fr-mt-7w fr-text--sm fr-text--light">
+    <a href="information-donnees#info-reseaux-sociaux">Information sur les données</a>
+  </p>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <h2 class="fr-h6">Comptes Twitter <span class="fr-fi-twitter-fill" aria-hidden="true"></span></h2>
+  <map-parent>
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-mt-5w">
+      <div class="fr-col-11 fr-col-sm-4">
+        <tag-select-group data-default-tag="twitter">
+        </tag-select-group>
+
+        <map-chart data-url="api/reseaux-sociaux/n-followers-map"
+                   data-transform="socialNetworkMap">
+        </map-chart>
+      </div>
+
+      <div class="fr-col-1"></div>
+
+      <div class="fr-col-11 fr-col-sm-4">
+        <map-breadcrumbs></map-breadcrumbs>
+        <div class="fr-mt-5w">
+          <div style="display:none;"><chart-title></chart-title></div>
+          <map-detail data-url="api/reseaux-sociaux/n-followers-map-detail/twitter"
+                      data-render-fct="twitter">
+          </map-detail>
+        </div>
+      </div>
+    </div>
+  </map-parent>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <h2 class="fr-h6">Autres comptes Twitter</h2>
+  <p>Nombre d'abonnements</p>
+  <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+    <div class="fr-col-10 fr-col-md-5">
+      <chart-parent>
+        <category-chart data-url="api/reseaux-sociaux/n-followers-not-geo/twitter"
+                        data-transform="socialNetworkFollowers">
+        </category-chart>
+      </chart-parent>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <h2 class="fr-h6">YouTube</h2>
+  <p><a href="https://www.youtube.com/channel/UCqxXM5u3U1jwrI36fSB9VuA" target="_blank">Chaîne nationale</a> de la
+    Gendarmerie Nationale</p>
+  <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+    <div class="fr-col-10 fr-col-sm-4">
+<!--      <feature-figure-->
+<!--          data-display-size="sm"-->
+<!--        TODO: fix this api call ! -->
+<!--          data-url="api/reseaux-sociaux/stats-yt/https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUCqxXM5u3U1jwrI36fSB9VuA"-->
+<!--          data-field="n_followers">-->
+<!--      </feature-figure>-->
+      <div class="fr-display-sm">39 300</div>
+      <p>abonnés et abonnées</p>
+    </div>
+    <div class="fr-col-10 fr-col-sm-4">
+<!--      <feature-figure-->
+<!--          data-display-size="sm"-->
+<!--          data-url="api/reseaux-sociaux/stats-yt/https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUCqxXM5u3U1jwrI36fSB9VuA"-->
+<!--          data-field="n_videos">-->
+<!--      </feature-figure>-->
+      <div class="fr-display-sm">390</div>
+      <p>vidéos</p>
+    </div>
+    <div class="fr-col-10 fr-col-sm-4">
+<!--      <feature-figure-->
+<!--          data-display-size="sm"-->
+<!--          data-url="api/reseaux-sociaux/stats-yt/https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUCqxXM5u3U1jwrI36fSB9VuA"-->
+<!--          data-field="n_views"-->
+<!--      >-->
+<!--      </feature-figure>-->
+      <div class="fr-display-sm">6 103 400</div>
+      <p>vues</p>
+    </div>
+  </div>
+</div>
+<br>

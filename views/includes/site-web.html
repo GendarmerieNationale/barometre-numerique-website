@@ -1,0 +1,162 @@
+<div class="fr-container bn-feature-block bn-feature-text">
+  <feature-figure data-field="n_visits"
+                  data-url="api/site-web/n-visites-total?year=2022">
+  </feature-figure>
+  <div class="fr-h6">visites sur le
+    <a href="https://www.gendarmerie.interieur.gouv.fr/" target="_blank">site web</a> de
+    la Gendarmerie Nationale en 2022
+  </div>
+  <p class="fr-mt-7w fr-text--sm fr-text--light">
+    <a href="information-donnees#info-site-web">Information sur les données</a>
+  </p>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <h2 class="fr-h6">Nombre de visites</h2>
+  <chart-parent>
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+      <tag-select-group data-tags="day,week,month,year"
+                        data-default-tag="day">
+      </tag-select-group>
+    </div>
+
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+      <div class="fr-col-11 fr-col-sm-9 fr-col-md-8 fr-col-lg-7 fr-col-xl-6">
+        <timeline-chart data-url="api/site-web/n-visits-timeline"
+                        data-label-key="time_dim"
+                        data-value-key="n_visits">
+        </timeline-chart>
+      </div>
+    </div>
+  </chart-parent>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <h2 class="fr-h6">Origine géographique des visites</h2>
+  <chart-parent>
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+      <tag-select-group data-tags="month,year"
+                        data-default-tag="year">
+      </tag-select-group>
+    </div>
+
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+      <div class="fr-col-10 fr-col-md-4">
+        <p class="fr-text--lead">Pays</p>
+        <category-chart data-url="api/site-web/n-visits-geo/pays"
+                        data-transform="siteWebCategoryPays"
+                        data-max-results="7">
+        </category-chart>
+      </div>
+      <div class="fr-col-10 fr-col-md-4">
+        <p class="fr-text--lead">Régions</p>
+        <category-chart data-url="api/site-web/n-visits-geo/region"
+                        data-transform="siteWebCategoryRegion"
+                        data-max-results="7">
+        </category-chart>
+      </div>
+      <div class="fr-col-10 fr-col-md-4">
+        <p class="fr-text--lead">Villes</p>
+        <category-chart data-url="api/site-web/n-visits-geo/ville"
+                        data-transform="siteWebCategoryVille"
+                        data-max-results="7">
+        </category-chart>
+      </div>
+    </div>
+  </chart-parent>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+    <div class="fr-col-10 fr-col-md-4">
+      <h2 class="fr-h6">Sous-sites les plus visités</h2>
+      <chart-parent>
+        <div class="fr-grid-row fr-grid-row--center">
+          <tag-select-group data-tags="month,year"
+                            data-default-tag="month"
+                            data-max-results="7">
+          </tag-select-group>
+        </div>
+
+        <div class="fr-grid-row fr-grid-row--center">
+          <div class="fr-col-10">
+            <category-chart data-url="api/site-web/n-visits-subsite"
+                            data-transform="siteWebSousSites"
+                            data-max-results="7">
+            </category-chart>
+          </div>
+        </div>
+      </chart-parent>
+    </div>
+
+    <div class="fr-col-10 fr-col-md-4">
+      <h2 class="fr-h6">Sources des visites</h2>
+      <chart-parent>
+        <div class="fr-grid-row fr-grid-row--center">
+          <tag-select-group data-tags="month,year"
+                            data-default-tag="month"
+                            data-max-results="7">
+          </tag-select-group>
+        </div>
+
+        <div class="fr-grid-row fr-grid-row--center">
+          <div class="fr-col-10">
+            <category-chart data-url="api/site-web/n-visits-source"
+                            data-transform="siteWebSources"
+                            data-max-results="7">
+            </category-chart>
+          </div>
+        </div>
+      </chart-parent>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <h2 class="fr-h6">Dispositifs</h2>
+  <chart-parent>
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+      <tag-select-group data-tags="month,year"
+                        data-default-tag="year">
+      </tag-select-group>
+    </div>
+
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+      <div class="fr-col-10 fr-col-md-4">
+        <p class="fr-text--lead">Appareil</p>
+        <category-chart
+            data-url="api/site-web/n-visits-dispositif/device"
+            data-transform="siteWebCategoryDevice"
+            data-max-results="7"
+        >
+        </category-chart>
+      </div>
+      <div class="fr-col-10 fr-col-md-4">
+        <p class="fr-text--lead">Système opérationnel</p>
+        <category-chart
+            data-url="api/site-web/n-visits-dispositif/os"
+            data-transform="siteWebCategoryOS"
+            data-max-results="7"
+        >
+        </category-chart>
+      </div>
+      <div class="fr-col-10 fr-col-md-4">
+        <p class="fr-text--lead">Navigateur</p>
+        <category-chart
+            data-url="api/site-web/n-visits-dispositif/browser"
+            data-transform="siteWebCategoryBrowser"
+            data-max-results="7"
+        >
+        </category-chart>
+      </div>
+    </div>
+  </chart-parent>
+</div>

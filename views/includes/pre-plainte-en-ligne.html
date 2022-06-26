@@ -1,0 +1,97 @@
+<div class="fr-container bn-feature-block bn-feature-text">
+  <feature-figure data-field="n_preplaintes_total"
+                  data-url="api/pre-plainte-en-ligne/n-preplaintes-total"></feature-figure>
+    <div class="fr-h6">dépôts de plainte réalisés sur la plateforme <a href="https://www.pre-plainte-en-ligne.gouv.fr/" target="_blank">Pré-Plainte En Ligne</a> depuis 2013</div>
+    <p class="fr-mt-7w fr-text--sm fr-text--light">
+      <a href="information-donnees#info-ppel">Information sur les données</a>
+    </p>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <h2 class="fr-h6">Nombre de pré-plaintes déposées</h2>
+  <chart-parent>
+    <div class="fr-grid-row fr-grid-row--center">
+      <tag-select-group data-tags="week,month,year"
+                        data-default-tag="week">
+      </tag-select-group>
+    </div>
+
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+      <div class="fr-col-11 fr-col-sm-9 fr-col-md-8 fr-col-lg-7 fr-col-xl-6">
+        <timeline-chart data-url="api/pre-plainte-en-ligne/preplaintes-timeline"
+                        data-label-key="time_dim"
+                        data-value-key="n_preplaintes">
+        </timeline-chart>
+      </div>
+    </div>
+  </chart-parent>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <h2 class="fr-h6">Durée moyenne</h2>
+  <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+    <div class="fr-col-10 fr-col-sm-6">
+      <feature-figure data-field="duree_moyenne"
+                      data-transform="formatDuration"
+                      data-url="api/pre-plainte-en-ligne/duree-moyenne">
+      </feature-figure>
+      <p>pour effectuer la déclaration en ligne</p>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <h2 class="fr-h6">Origine géographique des dépôts</h2>
+  <map-parent>
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-mt-5w">
+      <div class="fr-col-11 fr-col-sm-4">
+        <map-chart data-url="api/pre-plainte-en-ligne/map"
+                   data-transform="ppelMap">
+        </map-chart>
+      </div>
+
+      <div class="fr-col-1"></div>
+
+      <div class="fr-col-11 fr-col-sm-4">
+        <map-breadcrumbs></map-breadcrumbs>
+        <div class="fr-mt-7w">
+          <div style="display:none;"><chart-title></chart-title></div>
+          <map-detail data-url="api/pre-plainte-en-ligne/map-detail"
+                      data-render-fct="pre-plainte-en-ligne">
+          </map-detail>
+        </div>
+      </div>
+    </div>
+  </map-parent>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <h2 class="fr-h6">Auteur des dépôts</h2>
+  <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+    <div class="fr-col-10 fr-col-sm-6">
+      <chart-parent>
+        <div class="fr-grid-row fr-grid-row--center">
+          <tag-select-group data-tags="month,year"
+                            data-default-tag="month">
+          </tag-select-group>
+        </div>
+
+        <div class="fr-grid-row fr-grid-row--center fr-mt-5w">
+          <div class="fr-col-10">
+            <category-chart data-url="api/pre-plainte-en-ligne/person-type"
+                            data-transform="ppelPersonType">
+            </category-chart>
+          </div>
+        </div>
+      </chart-parent>
+    </div>
+  </div>
+</div>

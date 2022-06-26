@@ -1,0 +1,92 @@
+<div class="fr-container bn-feature-block bn-feature-text">
+  <feature-figure data-field="visit_count" data-url="api/site-web/recrutement/n-visits-total?year=2022"></feature-figure>
+  <div class="fr-h6">visites sur le <a href="https://www.gendarmerie.interieur.gouv.fr/recrutement" target="_blank">site
+    web de recrutement</a> de la Gendarmerie Nationale en 2022
+  </div>
+  <p class="fr-mt-7w fr-text--sm fr-text--light">
+    <a href="information-donnees#info-recrutement">Information sur les données</a>
+  </p>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+    <h2 class="fr-h6">Visites sur les <a
+        href="https://www.gendarmerie.interieur.gouv.fr/recrutement/decouvrir-nos-metiers" target="_blank">fiches métiers</a></h2>
+    <chart-parent>
+        <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+            <tag-select-group data-tags="month,year"
+                              data-default-tag="month">
+            </tag-select-group>
+        </div>
+
+        <div class="fr-mt-5w">
+          <category-chart data-url="api/site-web/recrutement/fiches-metier"
+                          data-transform="recrutementFichesMetiers"
+                          data-max-results="30">
+          </category-chart>
+        </div>
+    </chart-parent>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block">
+  <h2 class="fr-h6">Taux de féminisation</h2>
+  <chart-parent>
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+      <tag-select-group data-tags="years:2016-2021"
+                        data-default-tag="2020">
+      </tag-select-group>
+    </div>
+
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-mt-2w">
+      <div class="fr-col-10 fr-col-md-6 fr-col-xl-5">
+        <p class="fr-text--lead">Personnel militaire</p>
+        <category-chart data-url="api/site-web/recrutement/effectifs-categorie"
+                        data-transform="recrutementFeminisation">
+        </category-chart>
+      </div>
+      <div class="fr-col-10 fr-col-md-6 fr-col-xl-5 fr-mt-7w">
+        <div class="fr-my-2w">
+          <feature-figure
+              data-display-size="sm"
+              data-url="api/site-web/recrutement/effectifs"
+              data-transform="recrutementFeminisationPercMilitaire">
+          </feature-figure>
+          <p>de femmes parmi le personnel militaire</p>
+        </div>
+        <div class="fr-my-2w chart-container">
+          <feature-figure
+              data-display-size="sm"
+              data-url="api/site-web/recrutement/effectifs"
+              data-transform="recrutementFeminisationPercCivil">
+          </feature-figure>
+          <p>de femmes parmi le personnel civil</p>
+        </div>
+      </div>
+    </div>
+  </chart-parent>
+</div>
+
+<hr>
+
+<div class="fr-container bn-block fr-my-5w">
+  <h2 class="fr-h6">Nombre de visites sur le site de recrutement</h2>
+  <chart-parent>
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+      <tag-select-group data-tags="day,week,month,year"
+                        data-default-tag="day">
+      </tag-select-group>
+    </div>
+
+    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+      <div class="fr-col-11 fr-col-sm-9 fr-col-md-8 fr-col-lg-7 fr-col-xl-6 fr-my-5w">
+        <timeline-chart data-url="api/site-web/recrutement/n-visits-timeline"
+                        data-label-key="time_dim"
+                        data-value-key="visit_count">
+        </timeline-chart>
+      </div>
+    </div>
+  </chart-parent>
+</div>

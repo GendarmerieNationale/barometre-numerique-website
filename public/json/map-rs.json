@@ -1,0 +1,1380 @@
+{
+    "FR-01": {
+        "facebook": {
+            "nb_abo": 75706,
+            "nb_likes": 3227,
+            "url": "https://www.facebook.com/GGD01"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 26,
+            "nb_followers": 3118,
+            "url": "https://twitter.com/Gendarmerie_001"
+        }
+    },
+    "FR-02": {
+        "facebook": {
+            "nb_abo": 26415,
+            "nb_likes": 51260,
+            "url": "https://www.facebook.com/GGD02"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 47,
+            "nb_followers": 58036,
+            "url": "https://twitter.com/Gendarmerie_002"
+        }
+    },
+    "FR-03": {
+        "facebook": {
+            "nb_abo": 12095,
+            "nb_likes": 47206,
+            "url": "https://www.facebook.com/GGD03"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 48,
+            "nb_followers": 70888,
+            "url": "https://twitter.com/Gendarmerie_003"
+        }
+    },
+    "FR-04": {
+        "facebook": {
+            "nb_abo": 86837,
+            "nb_likes": 96378,
+            "url": "https://www.facebook.com/GGD04"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 14,
+            "nb_followers": 63988,
+            "url": "https://twitter.com/Gendarmerie_004"
+        }
+    },
+    "FR-05": {
+        "facebook": {
+            "nb_abo": 26745,
+            "nb_likes": 19400,
+            "url": "https://www.facebook.com/GGD05"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 44,
+            "nb_followers": 37395,
+            "url": "https://twitter.com/Gendarmerie_005"
+        }
+    },
+    "FR-06": {
+        "facebook": {
+            "nb_abo": 29492,
+            "nb_likes": 48332,
+            "url": "https://www.facebook.com/GGD06"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 10,
+            "nb_followers": 2588,
+            "url": "https://twitter.com/Gendarmerie_006"
+        }
+    },
+    "FR-07": {
+        "facebook": {
+            "nb_abo": 88788,
+            "nb_likes": 26903,
+            "url": "https://www.facebook.com/GGD07"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 49,
+            "nb_followers": 74564,
+            "url": "https://twitter.com/Gendarmerie_007"
+        }
+    },
+    "FR-08": {
+        "facebook": {
+            "nb_abo": 93484,
+            "nb_likes": 88245,
+            "url": "https://www.facebook.com/GGD08"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 49,
+            "nb_followers": 62569,
+            "url": "https://twitter.com/Gendarmerie_008"
+        }
+    },
+    "FR-09": {
+        "facebook": {
+            "nb_abo": 74324,
+            "nb_likes": 40305,
+            "url": "https://www.facebook.com/GGD09"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 50,
+            "nb_followers": 65094,
+            "url": "https://twitter.com/Gendarmerie_009"
+        }
+    },
+    "FR-10": {
+        "facebook": {
+            "nb_abo": 30016,
+            "nb_likes": 26406,
+            "url": "https://www.facebook.com/GGD10"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 21,
+            "nb_followers": 25739,
+            "url": "https://twitter.com/Gendarmerie_010"
+        }
+    },
+    "FR-11": {
+        "facebook": {
+            "nb_abo": 99684,
+            "nb_likes": 89889,
+            "url": "https://www.facebook.com/GGD11"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 47,
+            "nb_followers": 9511,
+            "url": "https://twitter.com/Gendarmerie_011"
+        }
+    },
+    "FR-12": {
+        "facebook": {
+            "nb_abo": 62766,
+            "nb_likes": 66330,
+            "url": "https://www.facebook.com/GGD12"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 49,
+            "nb_followers": 23864,
+            "url": "https://twitter.com/Gendarmerie_012"
+        }
+    },
+    "FR-13": {
+        "facebook": {
+            "nb_abo": 46379,
+            "nb_likes": 23915,
+            "url": "https://www.facebook.com/GGD13"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 27,
+            "nb_followers": 78508,
+            "url": "https://twitter.com/Gendarmerie_013"
+        }
+    },
+    "FR-14": {
+        "facebook": {
+            "nb_abo": 88314,
+            "nb_likes": 97200,
+            "url": "https://www.facebook.com/GGD14"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 16,
+            "nb_followers": 65703,
+            "url": "https://twitter.com/Gendarmerie_014"
+        }
+    },
+    "FR-15": {
+        "facebook": {
+            "nb_abo": 17507,
+            "nb_likes": 75708,
+            "url": "https://www.facebook.com/GGD15"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 40,
+            "nb_followers": 28348,
+            "url": "https://twitter.com/Gendarmerie_015"
+        }
+    },
+    "FR-16": {
+        "facebook": {
+            "nb_abo": 20636,
+            "nb_likes": 71858,
+            "url": "https://www.facebook.com/GGD16"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 45,
+            "nb_followers": 34522,
+            "url": "https://twitter.com/Gendarmerie_016"
+        }
+    },
+    "FR-17": {
+        "facebook": {
+            "nb_abo": 65416,
+            "nb_likes": 35730,
+            "url": "https://www.facebook.com/GGD17"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 20,
+            "nb_followers": 9331,
+            "url": "https://twitter.com/Gendarmerie_017"
+        }
+    },
+    "FR-18": {
+        "facebook": {
+            "nb_abo": 92083,
+            "nb_likes": 34472,
+            "url": "https://www.facebook.com/GGD18"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 27,
+            "nb_followers": 25616,
+            "url": "https://twitter.com/Gendarmerie_018"
+        }
+    },
+    "FR-19": {
+        "facebook": {
+            "nb_abo": 47667,
+            "nb_likes": 28596,
+            "url": "https://www.facebook.com/GGD19"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 39,
+            "nb_followers": 84947,
+            "url": "https://twitter.com/Gendarmerie_019"
+        }
+    },
+    "FR-20R": {
+        "facebook": {
+            "nb_abo": 69122,
+            "nb_likes": 70491,
+            "url": "https://www.facebook.com/GGD20R"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 14,
+            "nb_followers": 78361,
+            "url": "https://twitter.com/Gendarmerie_020R"
+        }
+    },
+    "FR-21": {
+        "facebook": {
+            "nb_abo": 59934,
+            "nb_likes": 37425,
+            "url": "https://www.facebook.com/GGD21"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 6,
+            "nb_followers": 11812,
+            "url": "https://twitter.com/Gendarmerie_021"
+        }
+    },
+    "FR-22": {
+        "facebook": {
+            "nb_abo": 95384,
+            "nb_likes": 46670,
+            "url": "https://www.facebook.com/GGD22"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 39,
+            "nb_followers": 84123,
+            "url": "https://twitter.com/Gendarmerie_022"
+        }
+    },
+    "FR-23": {
+        "facebook": {
+            "nb_abo": 17711,
+            "nb_likes": 27669,
+            "url": "https://www.facebook.com/GGD23"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 16,
+            "nb_followers": 83383,
+            "url": "https://twitter.com/Gendarmerie_023"
+        }
+    },
+    "FR-24": {
+        "facebook": {
+            "nb_abo": 14852,
+            "nb_likes": 9368,
+            "url": "https://www.facebook.com/GGD24"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 31,
+            "nb_followers": 43542,
+            "url": "https://twitter.com/Gendarmerie_024"
+        }
+    },
+    "FR-25": {
+        "facebook": {
+            "nb_abo": 98718,
+            "nb_likes": 87939,
+            "url": "https://www.facebook.com/GGD25"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 37,
+            "nb_followers": 17078,
+            "url": "https://twitter.com/Gendarmerie_025"
+        }
+    },
+    "FR-26": {
+        "facebook": {
+            "nb_abo": 59771,
+            "nb_likes": 84433,
+            "url": "https://www.facebook.com/GGD26"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 1,
+            "nb_followers": 25809,
+            "url": "https://twitter.com/Gendarmerie_026"
+        }
+    },
+    "FR-27": {
+        "facebook": {
+            "nb_abo": 84923,
+            "nb_likes": 90536,
+            "url": "https://www.facebook.com/GGD27"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 40,
+            "nb_followers": 70329,
+            "url": "https://twitter.com/Gendarmerie_027"
+        }
+    },
+    "FR-28": {
+        "facebook": {
+            "nb_abo": 51002,
+            "nb_likes": 45803,
+            "url": "https://www.facebook.com/GGD28"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 37,
+            "nb_followers": 21484,
+            "url": "https://twitter.com/Gendarmerie_028"
+        }
+    },
+    "FR-29": {
+        "facebook": {
+            "nb_abo": 38712,
+            "nb_likes": 31189,
+            "url": "https://www.facebook.com/GGD29"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 11,
+            "nb_followers": 49317,
+            "url": "https://twitter.com/Gendarmerie_029"
+        }
+    },
+    "FR-30": {
+        "facebook": {
+            "nb_abo": 87466,
+            "nb_likes": 52203,
+            "url": "https://www.facebook.com/GGD30"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 3,
+            "nb_followers": 61078,
+            "url": "https://twitter.com/Gendarmerie_030"
+        }
+    },
+    "FR-31": {
+        "facebook": {
+            "nb_abo": 33512,
+            "nb_likes": 40391,
+            "url": "https://www.facebook.com/GGD31"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 23,
+            "nb_followers": 4860,
+            "url": "https://twitter.com/Gendarmerie_031"
+        }
+    },
+    "FR-32": {
+        "facebook": {
+            "nb_abo": 76597,
+            "nb_likes": 88398,
+            "url": "https://www.facebook.com/GGD32"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 16,
+            "nb_followers": 75325,
+            "url": "https://twitter.com/Gendarmerie_032"
+        }
+    },
+    "FR-33": {
+        "facebook": {
+            "nb_abo": 10774,
+            "nb_likes": 5253,
+            "url": "https://www.facebook.com/GGD33"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 19,
+            "nb_followers": 76157,
+            "url": "https://twitter.com/Gendarmerie_033"
+        }
+    },
+    "FR-34": {
+        "facebook": {
+            "nb_abo": 70408,
+            "nb_likes": 91041,
+            "url": "https://www.facebook.com/GGD34"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 35,
+            "nb_followers": 72479,
+            "url": "https://twitter.com/Gendarmerie_034"
+        }
+    },
+    "FR-35": {
+        "facebook": {
+            "nb_abo": 60052,
+            "nb_likes": 33713,
+            "url": "https://www.facebook.com/GGD35"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 41,
+            "nb_followers": 2605,
+            "url": "https://twitter.com/Gendarmerie_035"
+        }
+    },
+    "FR-36": {
+        "facebook": {
+            "nb_abo": 30794,
+            "nb_likes": 73154,
+            "url": "https://www.facebook.com/GGD36"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 4,
+            "nb_followers": 89150,
+            "url": "https://twitter.com/Gendarmerie_036"
+        }
+    },
+    "FR-37": {
+        "facebook": {
+            "nb_abo": 44799,
+            "nb_likes": 29994,
+            "url": "https://www.facebook.com/GGD37"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 36,
+            "nb_followers": 75759,
+            "url": "https://twitter.com/Gendarmerie_037"
+        }
+    },
+    "FR-38": {
+        "facebook": {
+            "nb_abo": 82793,
+            "nb_likes": 14111,
+            "url": "https://www.facebook.com/GGD38"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 9,
+            "nb_followers": 6937,
+            "url": "https://twitter.com/Gendarmerie_038"
+        }
+    },
+    "FR-39": {
+        "facebook": {
+            "nb_abo": 47545,
+            "nb_likes": 23453,
+            "url": "https://www.facebook.com/GGD39"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 48,
+            "nb_followers": 49131,
+            "url": "https://twitter.com/Gendarmerie_039"
+        }
+    },
+    "FR-40": {
+        "facebook": {
+            "nb_abo": 75871,
+            "nb_likes": 41189,
+            "url": "https://www.facebook.com/GGD40"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 11,
+            "nb_followers": 41674,
+            "url": "https://twitter.com/Gendarmerie_040"
+        }
+    },
+    "FR-41": {
+        "facebook": {
+            "nb_abo": 8986,
+            "nb_likes": 28348,
+            "url": "https://www.facebook.com/GGD41"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 27,
+            "nb_followers": 37485,
+            "url": "https://twitter.com/Gendarmerie_041"
+        }
+    },
+    "FR-42": {
+        "facebook": {
+            "nb_abo": 27749,
+            "nb_likes": 86716,
+            "url": "https://www.facebook.com/GGD42"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 40,
+            "nb_followers": 9680,
+            "url": "https://twitter.com/Gendarmerie_042"
+        }
+    },
+    "FR-43": {
+        "facebook": {
+            "nb_abo": 26922,
+            "nb_likes": 60657,
+            "url": "https://www.facebook.com/GGD43"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 35,
+            "nb_followers": 10817,
+            "url": "https://twitter.com/Gendarmerie_043"
+        }
+    },
+    "FR-44": {
+        "facebook": {
+            "nb_abo": 7385,
+            "nb_likes": 34906,
+            "url": "https://www.facebook.com/GGD44"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 44,
+            "nb_followers": 49747,
+            "url": "https://twitter.com/Gendarmerie_044"
+        }
+    },
+    "FR-45": {
+        "facebook": {
+            "nb_abo": 53593,
+            "nb_likes": 20657,
+            "url": "https://www.facebook.com/GGD45"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 15,
+            "nb_followers": 47685,
+            "url": "https://twitter.com/Gendarmerie_045"
+        }
+    },
+    "FR-46": {
+        "facebook": {
+            "nb_abo": 77071,
+            "nb_likes": 59239,
+            "url": "https://www.facebook.com/GGD46"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 42,
+            "nb_followers": 41799,
+            "url": "https://twitter.com/Gendarmerie_046"
+        }
+    },
+    "FR-47": {
+        "facebook": {
+            "nb_abo": 55249,
+            "nb_likes": 20388,
+            "url": "https://www.facebook.com/GGD47"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 40,
+            "nb_followers": 33522,
+            "url": "https://twitter.com/Gendarmerie_047"
+        }
+    },
+    "FR-48": {
+        "facebook": {
+            "nb_abo": 83386,
+            "nb_likes": 68881,
+            "url": "https://www.facebook.com/GGD48"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 25,
+            "nb_followers": 59772,
+            "url": "https://twitter.com/Gendarmerie_048"
+        }
+    },
+    "FR-49": {
+        "facebook": {
+            "nb_abo": 81693,
+            "nb_likes": 44894,
+            "url": "https://www.facebook.com/GGD49"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 20,
+            "nb_followers": 22454,
+            "url": "https://twitter.com/Gendarmerie_049"
+        }
+    },
+    "FR-50": {
+        "facebook": {
+            "nb_abo": 60718,
+            "nb_likes": 91793,
+            "url": "https://www.facebook.com/GGD50"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 18,
+            "nb_followers": 18089,
+            "url": "https://twitter.com/Gendarmerie_050"
+        }
+    },
+    "FR-51": {
+        "facebook": {
+            "nb_abo": 35318,
+            "nb_likes": 71842,
+            "url": "https://www.facebook.com/GGD51"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 47,
+            "nb_followers": 68873,
+            "url": "https://twitter.com/Gendarmerie_051"
+        }
+    },
+    "FR-52": {
+        "facebook": {
+            "nb_abo": 33024,
+            "nb_likes": 26324,
+            "url": "https://www.facebook.com/GGD52"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 11,
+            "nb_followers": 49511,
+            "url": "https://twitter.com/Gendarmerie_052"
+        }
+    },
+    "FR-53": {
+        "facebook": {
+            "nb_abo": 22583,
+            "nb_likes": 65644,
+            "url": "https://www.facebook.com/GGD53"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 28,
+            "nb_followers": 54724,
+            "url": "https://twitter.com/Gendarmerie_053"
+        }
+    },
+    "FR-54": {
+        "facebook": {
+            "nb_abo": 65070,
+            "nb_likes": 19161,
+            "url": "https://www.facebook.com/GGD54"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 28,
+            "nb_followers": 69535,
+            "url": "https://twitter.com/Gendarmerie_054"
+        }
+    },
+    "FR-55": {
+        "facebook": {
+            "nb_abo": 78549,
+            "nb_likes": 13243,
+            "url": "https://www.facebook.com/GGD55"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 40,
+            "nb_followers": 24143,
+            "url": "https://twitter.com/Gendarmerie_055"
+        }
+    },
+    "FR-56": {
+        "facebook": {
+            "nb_abo": 64419,
+            "nb_likes": 56305,
+            "url": "https://www.facebook.com/GGD56"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 33,
+            "nb_followers": 67251,
+            "url": "https://twitter.com/Gendarmerie_056"
+        }
+    },
+    "FR-57": {
+        "facebook": {
+            "nb_abo": 77273,
+            "nb_likes": 79512,
+            "url": "https://www.facebook.com/GGD57"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 16,
+            "nb_followers": 11445,
+            "url": "https://twitter.com/Gendarmerie_057"
+        }
+    },
+    "FR-58": {
+        "facebook": {
+            "nb_abo": 85505,
+            "nb_likes": 44121,
+            "url": "https://www.facebook.com/GGD58"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 40,
+            "nb_followers": 2382,
+            "url": "https://twitter.com/Gendarmerie_058"
+        }
+    },
+    "FR-59": {
+        "facebook": {
+            "nb_abo": 74283,
+            "nb_likes": 55939,
+            "url": "https://www.facebook.com/GGD59"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 5,
+            "nb_followers": 89835,
+            "url": "https://twitter.com/Gendarmerie_059"
+        }
+    },
+    "FR-60": {
+        "facebook": {
+            "nb_abo": 82548,
+            "nb_likes": 79403,
+            "url": "https://www.facebook.com/GGD60"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 45,
+            "nb_followers": 94977,
+            "url": "https://twitter.com/Gendarmerie_060"
+        }
+    },
+    "FR-61": {
+        "facebook": {
+            "nb_abo": 36557,
+            "nb_likes": 72348,
+            "url": "https://www.facebook.com/GGD61"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 33,
+            "nb_followers": 95142,
+            "url": "https://twitter.com/Gendarmerie_061"
+        }
+    },
+    "FR-62": {
+        "facebook": {
+            "nb_abo": 1336,
+            "nb_likes": 30734,
+            "url": "https://www.facebook.com/GGD62"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 16,
+            "nb_followers": 77483,
+            "url": "https://twitter.com/Gendarmerie_062"
+        }
+    },
+    "FR-63": {
+        "facebook": {
+            "nb_abo": 33443,
+            "nb_likes": 46243,
+            "url": "https://www.facebook.com/GGD63"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 16,
+            "nb_followers": 14081,
+            "url": "https://twitter.com/Gendarmerie_063"
+        }
+    },
+    "FR-64": {
+        "facebook": {
+            "nb_abo": 66339,
+            "nb_likes": 93704,
+            "url": "https://www.facebook.com/GGD64"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 31,
+            "nb_followers": 13510,
+            "url": "https://twitter.com/Gendarmerie_064"
+        }
+    },
+    "FR-65": {
+        "facebook": {
+            "nb_abo": 37987,
+            "nb_likes": 53497,
+            "url": "https://www.facebook.com/GGD65"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 18,
+            "nb_followers": 22164,
+            "url": "https://twitter.com/Gendarmerie_065"
+        }
+    },
+    "FR-66": {
+        "facebook": {
+            "nb_abo": 82850,
+            "nb_likes": 31358,
+            "url": "https://www.facebook.com/GGD66"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 26,
+            "nb_followers": 35840,
+            "url": "https://twitter.com/Gendarmerie_066"
+        }
+    },
+    "FR-67": {
+        "facebook": {
+            "nb_abo": 77551,
+            "nb_likes": 76664,
+            "url": "https://www.facebook.com/GGD67"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 9,
+            "nb_followers": 78596,
+            "url": "https://twitter.com/Gendarmerie_067"
+        }
+    },
+    "FR-68": {
+        "facebook": {
+            "nb_abo": 57814,
+            "nb_likes": 25950,
+            "url": "https://www.facebook.com/GGD68"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 7,
+            "nb_followers": 84164,
+            "url": "https://twitter.com/Gendarmerie_068"
+        }
+    },
+    "FR-69": {
+        "facebook": {
+            "nb_abo": 70037,
+            "nb_likes": 37167,
+            "url": "https://www.facebook.com/GGD69"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 7,
+            "nb_followers": 27027,
+            "url": "https://twitter.com/Gendarmerie_069"
+        }
+    },
+    "FR-70": {
+        "facebook": {
+            "nb_abo": 98884,
+            "nb_likes": 80465,
+            "url": "https://www.facebook.com/GGD70"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 45,
+            "nb_followers": 59205,
+            "url": "https://twitter.com/Gendarmerie_070"
+        }
+    },
+    "FR-71": {
+        "facebook": {
+            "nb_abo": 71619,
+            "nb_likes": 16699,
+            "url": "https://www.facebook.com/GGD71"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 44,
+            "nb_followers": 81086,
+            "url": "https://twitter.com/Gendarmerie_071"
+        }
+    },
+    "FR-72": {
+        "facebook": {
+            "nb_abo": 2028,
+            "nb_likes": 22182,
+            "url": "https://www.facebook.com/GGD72"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 46,
+            "nb_followers": 89772,
+            "url": "https://twitter.com/Gendarmerie_072"
+        }
+    },
+    "FR-73": {
+        "facebook": {
+            "nb_abo": 75542,
+            "nb_likes": 14914,
+            "url": "https://www.facebook.com/GGD73"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 7,
+            "nb_followers": 41056,
+            "url": "https://twitter.com/Gendarmerie_073"
+        }
+    },
+    "FR-74": {
+        "facebook": {
+            "nb_abo": 75070,
+            "nb_likes": 31125,
+            "url": "https://www.facebook.com/GGD74"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 4,
+            "nb_followers": 16588,
+            "url": "https://twitter.com/Gendarmerie_074"
+        }
+    },
+    "FR-76": {
+        "facebook": {
+            "nb_abo": 99853,
+            "nb_likes": 59389,
+            "url": "https://www.facebook.com/GGD76"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 8,
+            "nb_followers": 27174,
+            "url": "https://twitter.com/Gendarmerie_076"
+        }
+    },
+    "FR-77": {
+        "facebook": {
+            "nb_abo": 61877,
+            "nb_likes": 10779,
+            "url": "https://www.facebook.com/GGD77"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 47,
+            "nb_followers": 9164,
+            "url": "https://twitter.com/Gendarmerie_077"
+        }
+    },
+    "FR-78": {
+        "facebook": {
+            "nb_abo": 38370,
+            "nb_likes": 24278,
+            "url": "https://www.facebook.com/GGD78"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 33,
+            "nb_followers": 2686,
+            "url": "https://twitter.com/Gendarmerie_078"
+        }
+    },
+    "FR-79": {
+        "facebook": {
+            "nb_abo": 71334,
+            "nb_likes": 86473,
+            "url": "https://www.facebook.com/GGD79"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 37,
+            "nb_followers": 95348,
+            "url": "https://twitter.com/Gendarmerie_079"
+        }
+    },
+    "FR-80": {
+        "facebook": {
+            "nb_abo": 63172,
+            "nb_likes": 8506,
+            "url": "https://www.facebook.com/GGD80"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 14,
+            "nb_followers": 43658,
+            "url": "https://twitter.com/Gendarmerie_080"
+        }
+    },
+    "FR-81": {
+        "facebook": {
+            "nb_abo": 63163,
+            "nb_likes": 33712,
+            "url": "https://www.facebook.com/GGD81"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 16,
+            "nb_followers": 16640,
+            "url": "https://twitter.com/Gendarmerie_081"
+        }
+    },
+    "FR-82": {
+        "facebook": {
+            "nb_abo": 87961,
+            "nb_likes": 87585,
+            "url": "https://www.facebook.com/GGD82"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 48,
+            "nb_followers": 20311,
+            "url": "https://twitter.com/Gendarmerie_082"
+        }
+    },
+    "FR-83": {
+        "facebook": {
+            "nb_abo": 38171,
+            "nb_likes": 41987,
+            "url": "https://www.facebook.com/GGD83"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 36,
+            "nb_followers": 8760,
+            "url": "https://twitter.com/Gendarmerie_083"
+        }
+    },
+    "FR-84": {
+        "facebook": {
+            "nb_abo": 43024,
+            "nb_likes": 17765,
+            "url": "https://www.facebook.com/GGD84"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 37,
+            "nb_followers": 85645,
+            "url": "https://twitter.com/Gendarmerie_084"
+        }
+    },
+    "FR-85": {
+        "facebook": {
+            "nb_abo": 63232,
+            "nb_likes": 74521,
+            "url": "https://www.facebook.com/GGD85"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 21,
+            "nb_followers": 52531,
+            "url": "https://twitter.com/Gendarmerie_085"
+        }
+    },
+    "FR-86": {
+        "facebook": {
+            "nb_abo": 16474,
+            "nb_likes": 16957,
+            "url": "https://www.facebook.com/GGD86"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 48,
+            "nb_followers": 35616,
+            "url": "https://twitter.com/Gendarmerie_086"
+        }
+    },
+    "FR-87": {
+        "facebook": {
+            "nb_abo": 27986,
+            "nb_likes": 41718,
+            "url": "https://www.facebook.com/GGD87"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 11,
+            "nb_followers": 25287,
+            "url": "https://twitter.com/Gendarmerie_087"
+        }
+    },
+    "FR-88": {
+        "facebook": {
+            "nb_abo": 92629,
+            "nb_likes": 76373,
+            "url": "https://www.facebook.com/GGD88"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 22,
+            "nb_followers": 99234,
+            "url": "https://twitter.com/Gendarmerie_088"
+        }
+    },
+    "FR-89": {
+        "facebook": {
+            "nb_abo": 82347,
+            "nb_likes": 77943,
+            "url": "https://www.facebook.com/GGD89"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 11,
+            "nb_followers": 18297,
+            "url": "https://twitter.com/Gendarmerie_089"
+        }
+    },
+    "FR-90": {
+        "facebook": {
+            "nb_abo": 78455,
+            "nb_likes": 77918,
+            "url": "https://www.facebook.com/GGD90"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 19,
+            "nb_followers": 67581,
+            "url": "https://twitter.com/Gendarmerie_090"
+        }
+    },
+    "FR-91": {
+        "facebook": {
+            "nb_abo": 50755,
+            "nb_likes": 60494,
+            "url": "https://www.facebook.com/GGD91"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 48,
+            "nb_followers": 90230,
+            "url": "https://twitter.com/Gendarmerie_091"
+        }
+    },
+    "FR-92": {
+        "facebook": {
+            "nb_abo": 73617,
+            "nb_likes": 94411,
+            "url": "https://www.facebook.com/GGD92"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 22,
+            "nb_followers": 89875,
+            "url": "https://twitter.com/Gendarmerie_092"
+        }
+    },
+    "FR-93": {
+        "facebook": {
+            "nb_abo": 85722,
+            "nb_likes": 29600,
+            "url": "https://www.facebook.com/GGD93"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 13,
+            "nb_followers": 46424,
+            "url": "https://twitter.com/Gendarmerie_093"
+        }
+    },
+    "FR-94": {
+        "facebook": {
+            "nb_abo": 80522,
+            "nb_likes": 31985,
+            "url": "https://www.facebook.com/GGD94"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 20,
+            "nb_followers": 67794,
+            "url": "https://twitter.com/Gendarmerie_094"
+        }
+    },
+    "FR-95": {
+        "facebook": {
+            "nb_abo": 17912,
+            "nb_likes": 87590,
+            "url": "https://www.facebook.com/GGD95"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 47,
+            "nb_followers": 70151,
+            "url": "https://twitter.com/Gendarmerie_095"
+        }
+    },
+    "FR-971": {
+        "facebook": {
+            "nb_abo": 92095,
+            "nb_likes": 2463,
+            "url": "https://www.facebook.com/GGD971"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 46,
+            "nb_followers": 69544,
+            "url": "https://twitter.com/Gendarmerie_0971"
+        }
+    },
+    "FR-972": {
+        "facebook": {
+            "nb_abo": 74569,
+            "nb_likes": 81806,
+            "url": "https://www.facebook.com/GGD972"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 16,
+            "nb_followers": 89738,
+            "url": "https://twitter.com/Gendarmerie_0972"
+        }
+    },
+    "FR-973": {
+        "facebook": {
+            "nb_abo": 86470,
+            "nb_likes": 48626,
+            "url": "https://www.facebook.com/GGD973"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 43,
+            "nb_followers": 82206,
+            "url": "https://twitter.com/Gendarmerie_0973"
+        }
+    },
+    "FR-974": {
+        "facebook": {
+            "nb_abo": 81415,
+            "nb_likes": 52053,
+            "url": "https://www.facebook.com/GGD974"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 36,
+            "nb_followers": 83821,
+            "url": "https://twitter.com/Gendarmerie_0974"
+        }
+    },
+    "FR-976": {
+        "facebook": {
+            "nb_abo": 30426,
+            "nb_likes": 18359,
+            "url": "https://www.facebook.com/GGD976"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 19,
+            "nb_followers": 34979,
+            "url": "https://twitter.com/Gendarmerie_0976"
+        }
+    },
+    "FR-BL": {
+        "facebook": {
+            "nb_abo": 26898,
+            "nb_likes": 79151,
+            "url": "https://www.facebook.com/GGDBL"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 13,
+            "nb_followers": 18794,
+            "url": "https://twitter.com/Gendarmerie_0BL"
+        }
+    },
+    "FR-MF": {
+        "facebook": {
+            "nb_abo": 45153,
+            "nb_likes": 46181,
+            "url": "https://www.facebook.com/GGDMF"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 31,
+            "nb_followers": 56392,
+            "url": "https://twitter.com/Gendarmerie_0MF"
+        }
+    },
+    "FR-NC": {
+        "facebook": {
+            "nb_abo": 19900,
+            "nb_likes": 36380,
+            "url": "https://www.facebook.com/GGDNC"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 4,
+            "nb_followers": 91893,
+            "url": "https://twitter.com/Gendarmerie_0NC"
+        }
+    },
+    "FR-PF": {
+        "facebook": {
+            "nb_abo": 7552,
+            "nb_likes": 63360,
+            "url": "https://www.facebook.com/GGDPF"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de l'Aveyron du Nord-Est",
+        "twitter": {
+            "n_recent_tweets": 12,
+            "nb_followers": 83418,
+            "url": "https://twitter.com/Gendarmerie_0PF"
+        }
+    },
+    "FR-PM": {
+        "facebook": {
+            "nb_abo": 17944,
+            "nb_likes": 93524,
+            "url": "https://www.facebook.com/GGDPM"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental de Toto-sur-Mer",
+        "twitter": {
+            "n_recent_tweets": 32,
+            "nb_followers": 72981,
+            "url": "https://twitter.com/Gendarmerie_0PM"
+        }
+    },
+    "FR-TF": {
+        "facebook": {
+            "nb_abo": 47559,
+            "nb_likes": 78612,
+            "url": "https://www.facebook.com/GGDTF"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 20,
+            "nb_followers": 21375,
+            "url": "https://twitter.com/Gendarmerie_0TF"
+        }
+    },
+    "FR-WF": {
+        "facebook": {
+            "nb_abo": 51164,
+            "nb_likes": 3595,
+            "url": "https://www.facebook.com/GGDWF"
+        },
+        "full_name": "Groupement de Gendarmerie D\u00e9partemental du Machin-Bidule",
+        "twitter": {
+            "n_recent_tweets": 32,
+            "nb_followers": 55450,
+            "url": "https://twitter.com/Gendarmerie_0WF"
+        }
+    }
+}

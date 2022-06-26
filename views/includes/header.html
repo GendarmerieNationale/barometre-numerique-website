@@ -1,0 +1,156 @@
+<header role="banner" class="fr-header">
+    <div class="fr-header__body">
+        <div class="fr-container">
+            <div class="fr-header__body-row">
+                <div class="fr-header__brand fr-enlarge-link">
+                    <div class="fr-header__brand-top">
+                        <div class="fr-header__logo">
+                            <p class="fr-logo">
+                                Ministère
+                                <br>de l'intérieur
+                            </p>
+                        </div>
+                        <div class="fr-header__navbar">
+                            <button class="fr-btn--menu fr-btn" data-fr-opened="false" aria-controls="main-menu" aria-haspopup="menu" title="Menu" id="fr-btn-menu-mobile-4">
+                                Menu
+                            </button>
+                        </div>
+                    </div>
+                    <div class="fr-header__service">
+                        <a href="./" title="Accueil - Le Baromètre Numérique">
+                            <p class="fr-header__service-title">Le Baromètre Numérique de la Gendarmerie Nationale <span class="fr-badge fr-badge--sm fr-badge--green-emeraude">BETA</span></p>
+                        </a>
+                        <p class="fr-header__service-tagline">Plateforme de données ouvertes des services numériques de la Gendarmerie Nationale</p>
+                    </div>
+                </div>
+                <div class="fr-header__tools">
+                    <div class="fr-header__tools-links">
+                        <ul class="fr-links-group">
+                            <li>
+                                <a class="fr-link fr-fi-filter-line" href="api/docs/">API</a>
+                            </li>
+                            <li>
+                                <a class="fr-link fr-fi-github-line" href="https://github.com/GendarmerieNationale/barometre-numerique-web" target="_blank">Code</a>
+                            </li>
+                            <li>
+                                <button class="fr-link fr-fi-theme-fill fr-link--icon-left" aria-controls="fr-theme-modal" data-fr-opened="false">Paramètres d'affichage</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main-menu" class="fr-header__menu fr-modal" aria-labelledby="fr-btn-menu-mobile-4">
+        <div class="fr-container">
+            <button class="fr-link--close fr-link" aria-controls="main-menu">Fermer</button>
+            <div class="fr-header__menu-links"></div>
+            <nav class="fr-nav" id="navigation-869" role="navigation" aria-label="Menu principal">
+                <ul class="fr-nav__list">
+                    <li class="fr-nav__item">
+                        <a class="fr-nav__link" id="ma-gendarmerie" href="ma-gendarmerie" target="_self">Ma Gendarmerie</a>
+                    </li>
+                    <li class="fr-nav__item">
+                        <button class="fr-nav__btn" aria-expanded="false" aria-controls="menu-procedures">Procédures</button>
+                        <div class="fr-collapse fr-menu" id="menu-procedures">
+                            <ul class="fr-menu__list">
+                                <li>
+                                    <a class="fr-nav__link" id="perceval" href="perceval" target="_self">Perceval</a>
+                                </li>
+                                <li>
+                                    <a class="fr-nav__link" id="pre-plainte-en-ligne" href="pre-plainte-en-ligne" target="_self">Pré-plainte en ligne</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="fr-nav__item">
+                        <button class="fr-nav__btn" aria-expanded="false" aria-controls="menu-portails-infos">Portails d'information</button>
+                        <div class="fr-collapse fr-menu" id="menu-portails-infos">
+                            <ul class="fr-menu__list">
+                                <li>
+                                    <a class="fr-nav__link" id="site-web" href="site-web" target="_self">Site web</a>
+                                </li>
+                                <li>
+                                    <a class="fr-nav__link" id="reseaux-sociaux" href="reseaux-sociaux" target="_self">Réseaux sociaux</a>
+                                </li>
+                                <!-- <li>
+                                    <a class="fr-nav__link" id="app-mobile" href="app-mobile" target="_self">App mobile (Ma Sécurité)</a>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="fr-nav__item">
+                        <a class="fr-nav__link" id="recrutement" href="recrutement" target="_self">Recrutement</a>
+                    </li>
+                    <li class="fr-nav__item">
+                        <a class="fr-nav__link" id="service-public-plus" href="service-public-plus" target="_self">ServicesPublics+</a>
+                    </li>
+                    <li class="fr-nav__item">
+                        <a class="fr-nav__link" id="iggn" href="iggn" target="_self">Réclamations IGGN</a>
+                    </li>
+                    <li class="fr-nav__item">
+                        <a class="fr-nav__link" id="a-propos" href="a-propos" target="_self">À propos</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<dialog id="fr-theme-modal" class="fr-modal" role="dialog" aria-labelledby="fr-theme-modal-title">
+    <div class="fr-container fr-container--fluid fr-container-md">
+        <div class="fr-grid-row fr-grid-row--center">
+            <div class="fr-col-12 fr-col-md-6 fr-col-lg-4">
+                <div class="fr-modal__body">
+                    <div class="fr-modal__header">
+                        <button class="fr-link--close fr-link" aria-controls="fr-theme-modal">Fermer</button>
+                    </div>
+                    <div class="fr-modal__content">
+                        <h1 id="fr-theme-modal-title" class="fr-modal__title">
+                            Paramètres d’affichage
+                        </h1>
+                        <div id="fr-display" class="fr-form-group fr-display">
+                            <div class="fr-form-group">
+                                <fieldset class="fr-fieldset">
+                                    <legend class="fr-fieldset__legend fr-text--regular" id='-legend'>
+                                        Choisissez un thème pour personnaliser l’apparence du site.
+                                    </legend>
+                                    <div class="fr-fieldset__content">
+                                        <div class="fr-radio-group fr-radio-rich">
+                                            <input value="light" type="radio" id="fr-radios-theme-light" name="fr-radios-theme">
+                                            <label class="fr-label" for="fr-radios-theme-light">Thème clair
+                                            </label>
+                                            <div class="fr-radio-rich__img" data-fr-inject-svg>
+                                                <img src="./dist/artwork/light.svg" alt="" />
+                                                <!-- L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance -->
+                                            </div>
+                                        </div>
+                                        <div class="fr-radio-group fr-radio-rich">
+                                            <input value="dark" type="radio" id="fr-radios-theme-dark" name="fr-radios-theme">
+                                            <label class="fr-label" for="fr-radios-theme-dark">Thème sombre
+                                            </label>
+                                            <div class="fr-radio-rich__img" data-fr-inject-svg>
+                                                <img src="./dist/artwork/dark.svg" alt="" />
+                                                <!-- L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance -->
+                                            </div>
+                                        </div>
+                                        <div class="fr-radio-group fr-radio-rich">
+                                            <input value="system" type="radio" id="fr-radios-theme-system" name="fr-radios-theme">
+                                            <label class="fr-label" for="fr-radios-theme-system">Système
+                                                <span class="fr-hint-text">Utilise les paramètres système.</span>
+                                            </label>
+                                            <div class="fr-radio-rich__img" data-fr-inject-svg>
+                                                <img src="./dist/artwork/system.svg" alt="" />
+                                                <!-- L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</dialog>

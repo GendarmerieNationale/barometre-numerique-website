@@ -27,6 +27,7 @@ class StartEndCalendar extends HTMLElement {
     startDate(timespan) {
         const date = new Date();
         const input = this.querySelector("input[id='input-calendar-start']");
+        const inputMax = this.querySelector("input[id='input-calendar-end']");
 
         if (timespan === 'day')
             date.setHours(0)
@@ -38,14 +39,22 @@ class StartEndCalendar extends HTMLElement {
             date.setFullYear(date.getFullYear() - 1)
 
         input.setAttribute('value', date.toISOString().split('T')[0]);
+
+        this.addEventListener('change', () => {
+            inputMax.setAttribute('min', input.value);
+
+            if (input.value > inputMax.value)
+                inputMax.setAttribute('value', input.value);
+        });
     }
 
     endDate() {
         const date = new Date();
         const input = this.querySelector("input[id='input-calendar-end']");
+        const inputMin = this.querySelector("input[id='input-calendar-start']");
 
         input.setAttribute('value', date.toISOString().split('T')[0]);
-        input.setAttribute('max', date.toISOString().split('T')[0]);
+        input.setAttribute('min', inputMin.value);
     }
 
     render() {

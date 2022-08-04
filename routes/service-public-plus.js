@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const db = require('../db')
-const {getStartDate} = require("./utils");
+const {getBetweenDate} = require("./utils");
 
 
 /**
@@ -99,10 +99,11 @@ router.get('/map-detail/:geoIso', (req, res, next) => {
 })
 
 /**
- * GET /api/service-public-plus/timeline/{timespan}
+ * GET /api/service-public-plus/timeline/{start_date}/{end_date}
  * @tags service-public-plus
- * @summary Nombre d'expériences par jour ou par mois, sur une période choisie (`timespan`)
- * @param {string} timespan.path.required - enum:week,month,year - Période choisie
+ * @summary Nombre d'expériences par jour ou par mois, sur une période choisie.
+ * @param {string} start_date.path.required - Date de début de la période, au format YYYY-MM-DD.
+ * @param {string} end_date.path.required - Date de fin de la période, au format YYYY-MM-DD.
  * @return {object} 200 - Réponse réussie.
  * @example response - 200 - Exemple de réponse réussie.
  * [
@@ -116,15 +117,11 @@ router.get('/map-detail/:geoIso', (req, res, next) => {
  *   }
  * ]
  */
-router.get('/timeline/:timespan', (req, res, next) => {
-    let {startDate, endDate} = getStartDate(req.params.timespan);
-    let time_sql_col = '';
-    if (req.params.timespan === 'week' || req.params.timespan === 'month')
-        time_sql_col = 'date';
-    else if (req.params.timespan === 'year')
-        time_sql_col = 'month';
-    else
-        throw Error('timespan should be week, month or year')
+router.get('/timeline/:start_date/:end_date', (req, res, next) => {
+    let startDate = req.params.start_date;
+    let endDate = req.params.end_date
+    let time_sql_col = getBetweenDate(startDate, endDate);
+
     db
         .query(
             `select ${time_sql_col} as time_dim, sum(exp_count) as exp_count ` +
@@ -187,10 +184,9 @@ router.get('/structure', (req, res, next) => {
  */
 router.get('/tags', (req, res, next) => {
     db
-        .query('SELECT tag, pos_count, neg_count, med_count, total_count FROM exp_tags')
+        .query('SELECT tag, pos_count, med_count, neg_count, total_count FROM exp_tags')
         .then(result => res.send(result.rows))
         .catch(next)
 })
-
 
 module.exports = router

@@ -2,9 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const db = require('../db')
-const {getStartDate} = require("./utils");
-
-const endDateStr = '2022-05-15T11:00:00.000Z';
+const {getBetweenDateTime} = require("./utils");
 
 /**
  * @tags site-web - Site grand public de la Gendarmerie Nationale
@@ -33,12 +31,13 @@ router.get('/n-visites-total/', (req, res, next) => {
 })
 
 /**
- * GET /api/site-web/n-visits-timeline/{timespan}
+ * GET /api/site-web/n-visits-timeline/{start_date}/{end_date}
  * @tags site-web
  * @summary Nombre de visites par unité de temps
  *          (jour si la période sélectionnée est la semaine ou le mois,
  *          mois si la période sélectionnée est l'année)
- * @param {string} timespan.path.required - enum:day,week,month,year
+ * @param {string} start_date.path.required - Date de début de la période au format YYYY-MM-DD.
+ * @param {string} end_date.path.required - Date de fin de la période au format YYYY-MM-DD.
  * @return {object} 200 - Réponse réussie.
  * @example response - 200 - (timespan='day') Exemple de réponse réussie.
  * [
@@ -59,17 +58,10 @@ router.get('/n-visites-total/', (req, res, next) => {
  *   }
  * ]
  */
-router.get('/n-visits-timeline/:timespan', (req, res, next) => {
-    let {startDate, endDate} = getStartDate(req.params.timespan, new Date(endDateStr));
-    let time_sql_col = '';
-    if (req.params.timespan === 'day')
-        time_sql_col = 'datetime';
-    else if (req.params.timespan === 'week' || req.params.timespan === 'month')
-        time_sql_col = 'date';
-    else if (req.params.timespan === 'year')
-        time_sql_col = 'month';
-    else
-        throw Error('timespan should be day, week, month or year')
+router.get('/n-visits-timeline/:start_date/:end_date', (req, res, next) => {
+    let startDate = req.params.start_date;
+    let endDate = req.params.end_date;
+    let time_sql_col = getBetweenDateTime(startDate, endDate);
 
     db
         .query(
@@ -85,11 +77,12 @@ router.get('/n-visits-timeline/:timespan', (req, res, next) => {
 })
 
 /**
- * GET /api/site-web/n-visits-geo/ville/{timespan}
+ * GET /api/site-web/n-visits-geo/ville/{start_date}/{end_date}
  * @tags site-web
  * @summary Nombre de visites par ville, sur la période sélectionnée
  * @param {string} maxResults.query - Nombre de villes à retourner (10 par défaut, 50 max)
- * @param {string} timespan.path.required - enum:month,year
+ * @param {string} start_date.path.required - Date de début de la période au format YYYY-MM-DD.
+ * @param {string} end_date.path.required - Date de fin de la période au format YYYY-MM-DD.
  * @return {object} 200 - Réponse réussie.
  * @example response - 200 - Exemple de réponse réussie.
  * [
@@ -103,11 +96,12 @@ router.get('/n-visits-timeline/:timespan', (req, res, next) => {
  *   }
  * ]
  */
-router.get('/n-visits-geo/ville/:timespan', (req, res, next) => {
+router.get('/n-visits-geo/ville/:start_date/:end_date', (req, res, next) => {
     // Allow querying up to 50 results, 10 by default
     let maxResults = req.query.maxResults ? Math.min(req.query.maxResults, 50) : 10;
+    let startDate = req.params.start_date;
+    let endDate = req.params.end_date;
 
-    let {startDate, endDate} = getStartDate(req.params.timespan, new Date(endDateStr));
     db
         .query(
             'select geo_city, sum(visit_count) as n_visits ' +
@@ -123,11 +117,12 @@ router.get('/n-visits-geo/ville/:timespan', (req, res, next) => {
 })
 
 /**
- * GET /api/site-web/n-visits-geo/region/{timespan}
+ * GET /api/site-web/n-visits-geo/region/{start_date}/{end_date}
  * @tags site-web
  * @summary Nombre de visites par région, sur la période sélectionnée
  * @param {string} maxResults.query - Nombre de pays à retourner (10 par défaut, 50 max)
- * @param {string} timespan.path.required - enum:month,year
+ * @param {string} start_date.path.required - Date de début de la période au format YYYY-MM-DD.
+ * @param {string} end_date.path.required - Date de fin de la période au format YYYY-MM-DD.
  * @return {object} 200 - Réponse réussie. Les visites pour lesquelles la région est `null`
  *          correspondent à des visites depuis l'étranger ou pour lesquelles la localisation
  *          n'a pas été enregistrée.
@@ -145,9 +140,10 @@ router.get('/n-visits-geo/ville/:timespan', (req, res, next) => {
  *   }
  * ]
  */
-router.get('/n-visits-geo/region/:timespan', (req, res, next) => {
+router.get('/n-visits-geo/region/:start_date/:end_date', (req, res, next) => {
     let maxResults = req.query.maxResults ? Math.min(req.query.maxResults, 50) : 10;
-    let {startDate, endDate} = getStartDate(req.params.timespan, new Date(endDateStr));
+    let startDate = req.params.start_date;
+    let endDate = req.params.end_date;
     db
         .query(
             'select geo_region_name, geo_region_iso, sum(visit_count) as n_visits ' +
@@ -163,11 +159,12 @@ router.get('/n-visits-geo/region/:timespan', (req, res, next) => {
 })
 
 /**
- * GET /api/site-web/n-visits-geo/pays/{timespan}
+ * GET /api/site-web/n-visits-geo/pays/{start_date}/{end_date}
  * @tags site-web
  * @summary Nombre de visites par pays, sur la période sélectionnée
  * @param {string} maxResults.query - Nombre de pays à retourner (10 par défaut, 50 max)
- * @param {string} timespan.path.required - enum:month,year
+ * @param {string} start_date.path.required - Date de début de la période au format YYYY-MM-DD.
+ * @param {string} end_date.path.required - Date de fin de la période au format YYYY-MM-DD.
  * @return {object} 200 - Réponse réussie.
  * @example response - 200 - Exemple de réponse réussie.
  * [
@@ -181,9 +178,11 @@ router.get('/n-visits-geo/region/:timespan', (req, res, next) => {
  *   }
  * ]
  */
-router.get('/n-visits-geo/pays/:timespan', (req, res, next) => {
+router.get('/n-visits-geo/pays/:start_date/:end_date', (req, res, next) => {
     let maxResults = req.query.maxResults ? Math.min(req.query.maxResults, 50) : 10;
-    let {startDate, endDate} = getStartDate(req.params.timespan, new Date(endDateStr));
+    let startDate = req.params.start_date;
+    let endDate = req.params.end_date;
+
     db
         .query(
             'select geo_country, sum(visit_count) as n_visits ' +
@@ -199,11 +198,12 @@ router.get('/n-visits-geo/pays/:timespan', (req, res, next) => {
 })
 
 /**
- * GET /api/site-web/n-visits-subsite/{timespan}
+ * GET /api/site-web/n-visits-subsite/{start_date}/{end_date}
  * @tags site-web
  * @summary Nombre de visites par sous-site, sur la période sélectionnée
+ * @param {string} start_date.path.required - Date de début de la période au format YYYY-MM-DD.
+ * @param {string} end_date.path.required - Date de fin de la période au format YYYY-MM-DD.
  * @param {string} maxResults.query - Nombre de lignes à retourner (10 par défaut, 50 max)
- * @param {string} timespan.path.required - enum:month,year
  * @return {object} 200 - Réponse réussie.
  * @example response - 200 - Exemple de réponse réussie.
  * [
@@ -217,9 +217,10 @@ router.get('/n-visits-geo/pays/:timespan', (req, res, next) => {
  *   }
  * ]
  */
-router.get('/n-visits-subsite/:timespan', (req, res, next) => {
+router.get('/n-visits-subsite/:start_date/:end_date', (req, res, next) => {
+    let startDate = req.params.start_date;
+    let endDate = req.params.end_date;
     let maxResults = req.query.maxResults ? Math.min(req.query.maxResults, 50) : 10;
-    let {startDate, endDate} = getStartDate(req.params.timespan, new Date(endDateStr));
     db
         .query(
             'select subsite, sum(visit_count) as n_visits ' +
@@ -247,6 +248,8 @@ router.get('/n-visits-subsite/:timespan', (req, res, next) => {
                     x.subsite = 'Garde Républicaine'
                 } else if (x.subsite === 'eogn') {
                     x.subsite = 'École des Officiers (EOGN)'
+                } else if (x.subsite === 'cyberimpact') {
+                    x.subsite = 'Le Baromètre Numérique'
                 }
             }
             // </HACKISH>
@@ -256,11 +259,12 @@ router.get('/n-visits-subsite/:timespan', (req, res, next) => {
 })
 
 /**
- * GET /api/site-web/n-visits-source/{timespan}
+ * GET /api/site-web/n-visits-source/{start_date}/{end_date}
  * @tags site-web
  * @summary Nombre de visites par source de trafic, sur la période sélectionnée
+ * @param {string} start_date.path.required - Date de début de la période au format YYYY-MM-DD.
+ * @param {string} end_date.path.required - Date de fin de la période au format YYYY-MM-DD.
  * @param {string} maxResults.query - Nombre de lignes à retourner (10 par défaut, 50 max)
- * @param {string} timespan.path.required - enum:month,year
  * @return {object} 200 - Réponse réussie.
  * @example response - 200 - Exemple de réponse réussie.
  * [
@@ -274,10 +278,11 @@ router.get('/n-visits-subsite/:timespan', (req, res, next) => {
  *   }
  * ]
  */
-router.get('/n-visits-source/:timespan', (req, res, next) => {
-    // todo: add src_detail ?
+router.get('/n-visits-source/:start_date/:end_date', (req, res, next) => {
+    // todo: add src_detail
+    let startDate = req.params.start_date;
+    let endDate = req.params.end_date;
     let maxResults = req.query.maxResults ? Math.min(req.query.maxResults, 50) : 10;
-    let {startDate, endDate} = getStartDate(req.params.timespan, new Date(endDateStr));
     db
         .query(
             'select src, sum(visit_count) as n_visits ' +
@@ -314,12 +319,13 @@ router.get('/n-visits-source/:timespan', (req, res, next) => {
 })
 
 /**
- * GET /api/site-web/n-visits-dispositif/device/{timespan}
+ * GET /api/site-web/n-visits-dispositif/device/{start_date}/{end_date}
  * @tags site-web
  * @summary Nombre de visites par appareil, sur la période sélectionnée (n'affiche
  *          que les entrées avec au moins 100 visites)
+ * @param {string} start_date.path.required - Date de début de la période au format YYYY-MM-DD.
+ * @param {string} end_date.path.required - Date de fin de la période au format YYYY-MM-DD.
  * @param {string} maxResults.query - Nombre de lignes à retourner (10 par défaut, 50 max)
- * @param {string} timespan.path.required - enum:month,year
  * @return {object} 200 - Réponse réussie.
  * @example response - 200 - Exemple de réponse réussie.
  * [
@@ -333,9 +339,10 @@ router.get('/n-visits-source/:timespan', (req, res, next) => {
  *   }
  * ]
  */
-router.get('/n-visits-dispositif/device/:timespan', (req, res, next) => {
+router.get('/n-visits-dispositif/device/:start_date/:end_date', (req, res, next) => {
+    let startDate = req.params.start_date;
+    let endDate = req.params.end_date;
     let maxResults = req.query.maxResults ? Math.min(req.query.maxResults, 50) : 10;
-    let {startDate, endDate} = getStartDate(req.params.timespan, new Date(endDateStr));
     db
         .query(
             'with t as (' +
@@ -372,12 +379,13 @@ router.get('/n-visits-dispositif/device/:timespan', (req, res, next) => {
 })
 
 /**
- * GET /api/site-web/n-visits-dispositif/os/{timespan}
+ * GET /api/site-web/n-visits-dispositif/os/{start_date}/{end_date}
  * @tags site-web
  * @summary Nombre de visites par OS, sur la période sélectionnée (n'affiche
  *          que les entrées avec au moins 100 visites)
+ * @param {string} start_date.path.required - Date de début de la période au format YYYY-MM-DD.
+ * @param {string} end_date.path.required - Date de fin de la période au format YYYY-MM-DD.
  * @param {string} maxResults.query - Nombre de lignes à retourner (10 par défaut, 50 max)
- * @param {string} timespan.path.required - enum:month,year
  * @return {object} 200 - Réponse réussie.
  * @example response - 200 - Exemple de réponse réussie.
  * [
@@ -391,9 +399,10 @@ router.get('/n-visits-dispositif/device/:timespan', (req, res, next) => {
  *   }
  * ]
  */
-router.get('/n-visits-dispositif/os/:timespan', (req, res, next) => {
+router.get('/n-visits-dispositif/os/:start_date/:end_date', (req, res, next) => {
+    let startDate = req.params.start_date;
+    let endDate = req.params.end_date;
     let maxResults = req.query.maxResults ? Math.min(req.query.maxResults, 50) : 10;
-    let {startDate, endDate} = getStartDate(req.params.timespan, new Date(endDateStr));
     db
         .query(
             'with t as (' +
@@ -413,12 +422,13 @@ router.get('/n-visits-dispositif/os/:timespan', (req, res, next) => {
 })
 
 /**
- * GET /api/site-web/n-visits-dispositif/browser/{timespan}
+ * GET /api/site-web/n-visits-dispositif/browser/{start_date}/{end_date}
  * @tags site-web
  * @summary Nombre de visites par navigateur, sur la période sélectionnée (n'affiche
  *          que les entrées avec au moins 100 visites)
+ * @param {string} start_date.path.required - Date de début de la période au format YYYY-MM-DD.
+ * @param {string} end_date.path.required - Date de fin de la période au format YYYY-MM-DD.
  * @param {string} maxResults.query - Nombre de lignes à retourner (10 par défaut, 50 max)
- * @param {string} timespan.path.required - enum:month,year
  * @return {object} 200 - Réponse réussie.
  * @example response - 200 - Exemple de réponse réussie.
  * [
@@ -432,9 +442,10 @@ router.get('/n-visits-dispositif/os/:timespan', (req, res, next) => {
  *   }
  * ]
  */
-router.get('/n-visits-dispositif/browser/:timespan', (req, res, next) => {
+router.get('/n-visits-dispositif/browser/:start_date/:end_date', (req, res, next) => {
+    let startDate = req.params.start_date;
+    let endDate = req.params.end_date;
     let maxResults = req.query.maxResults ? Math.min(req.query.maxResults, 50) : 10;
-    let {startDate, endDate} = getStartDate(req.params.timespan, new Date(endDateStr));
     db
         .query(
             'with t as (' +

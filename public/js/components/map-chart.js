@@ -93,7 +93,7 @@ ${svg}
             )
         } else {
             return this.querySelectorAll(
-                ".subtype-dm:not(#FR-2A):not(#FR-2B),.subtype-cmst,.subtype-comst,.subtype-com,.subtype-cdom,.subtype-ctuom"
+                ".subtype-dm:not(#FR-2A):not(#FR-2B):not(#FR-69),.subtype-cmst,.subtype-cmst:not(#FR-69M),.subtype-com,.subtype-cdom,.subtype-ctuom,.hack-map-rhone"
             )
         }
     }

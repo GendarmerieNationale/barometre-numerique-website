@@ -16,11 +16,9 @@
 <div class="fr-container bn-block">
   <h2 class="fr-h6">Nombre de visites</h2>
   <chart-parent>
-    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
-      <tag-select-group data-tags="day,week,month,year"
-                        data-default-tag="day">
-      </tag-select-group>
-    </div>
+    <start-end-calendar
+      timespan="month"
+    ></start-end-calendar>
 
     <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
       <div class="fr-col-11 fr-col-sm-9 fr-col-md-8 fr-col-lg-7 fr-col-xl-6">
@@ -38,11 +36,9 @@
 <div class="fr-container bn-block">
   <h2 class="fr-h6">Origine géographique des visites</h2>
   <chart-parent>
-    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
-      <tag-select-group data-tags="month,year"
-                        data-default-tag="year">
-      </tag-select-group>
-    </div>
+    <start-end-calendar
+      timespan="year"
+    ></start-end-calendar>
 
     <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
       <div class="fr-col-10 fr-col-md-4">
@@ -77,12 +73,9 @@
     <div class="fr-col-10 fr-col-md-4">
       <h2 class="fr-h6">Sous-sites les plus visités</h2>
       <chart-parent>
-        <div class="fr-grid-row fr-grid-row--center">
-          <tag-select-group data-tags="month,year"
-                            data-default-tag="month"
-                            data-max-results="7">
-          </tag-select-group>
-        </div>
+        <start-end-calendar
+          timespan="year"
+        ></start-end-calendar>
 
         <div class="fr-grid-row fr-grid-row--center">
           <div class="fr-col-10">
@@ -98,12 +91,9 @@
     <div class="fr-col-10 fr-col-md-4">
       <h2 class="fr-h6">Sources des visites</h2>
       <chart-parent>
-        <div class="fr-grid-row fr-grid-row--center">
-          <tag-select-group data-tags="month,year"
-                            data-default-tag="month"
-                            data-max-results="7">
-          </tag-select-group>
-        </div>
+        <start-end-calendar
+          timespan="year"
+        ></start-end-calendar>
 
         <div class="fr-grid-row fr-grid-row--center">
           <div class="fr-col-10">
@@ -123,11 +113,9 @@
 <div class="fr-container bn-block">
   <h2 class="fr-h6">Dispositifs</h2>
   <chart-parent>
-    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
-      <tag-select-group data-tags="month,year"
-                        data-default-tag="year">
-      </tag-select-group>
-    </div>
+    <start-end-calendar
+      timespan="year"
+    ></start-end-calendar>
 
     <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
       <div class="fr-col-10 fr-col-md-4">

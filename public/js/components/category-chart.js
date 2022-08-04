@@ -89,9 +89,20 @@ class CategoryChart extends HTMLElement {
 
     }
 
-    updateData(timespan) {
-        let url = `${this.baseUrl}/${timespan}`;
-        if (this.maxResults)
+    updateData(startDate, endDate, timespan) {
+        let url = '';
+
+        if(transforms.isNumber(timespan) === true) {
+            url = `${this.baseUrl}/${timespan}`;
+        }
+        else if (startDate === null && endDate === null) {  
+            url = `${this.baseUrl}`;
+        }
+        else {
+            url = `${this.baseUrl}/${startDate.value}/${endDate.value}`;
+        }
+
+        if (this.maxResults) 
             url += `?maxResults=${this.maxResults}`
         fetch(url)
             .then(response => response.json())

@@ -96,13 +96,13 @@ class MapDetail extends HTMLElement {
 
         let {n_followers, n_tweets, page_name, page_url} = data[0];
         return `
-<p class="fr-display-xs">${formatNumber(n_followers)}</p>
+<p class="fr-display-xs">${transforms.formatNumber(n_followers)}</p>
 <p>
     abonnements au compte Twitter<br>
     <a href="${page_url}" target="_blank">${page_name}</a>
 </p>
 <br>
-<p class="fr-display-xs">${formatNumber(n_tweets)}</p>
+<p class="fr-display-xs">${transforms.formatNumber(n_tweets)}</p>
 <p>
     Tweets
 </p>

@@ -14,11 +14,10 @@
 <div class="fr-container bn-block">
   <h2 class="fr-h6">Motifs des prises de contact</h2>
   <chart-parent>
-    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
-      <tag-select-group data-tags="month,year"
-                        data-default-tag="year">
-      </tag-select-group>
-    </div>
+    <start-end-calendar
+      date-start="2020-01-01"
+      date-end="2020-12-31"
+    ></start-end-calendar>
 
     <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
       <div class="fr-col-11 fr-col-sm-9 fr-col-md-7 fr-col-lg-5 fr-col-xl-5">
@@ -35,11 +34,9 @@
 <div class="fr-container bn-block">
   <h2 class="fr-h6">Nombre de prises de contact</h2>
   <chart-parent>
-    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
-      <tag-select-group data-tags="week,month,year"
-                        data-default-tag="month">
-      </tag-select-group>
-    </div>
+    <start-end-calendar
+      timespan="year"
+    ></start-end-calendar>
 
     <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
       <div class="fr-col-11 fr-col-sm-9 fr-col-md-8 fr-col-lg-7 fr-col-xl-6">
@@ -66,7 +63,7 @@
 
     <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
       <div class="fr-col-11 fr-col-sm-9 fr-col-md-8 fr-col-lg-7 fr-col-xl-6">
-        <timeline-chart data-url="api/ma-gendarmerie/affluence"
+        <timeline-chart data-url="api/ma-gendarmerie/affluence/daily-affluence"
                         data-label-key="hour"
                         data-value-key="n_contact"
                         data-display-y-axis="false">

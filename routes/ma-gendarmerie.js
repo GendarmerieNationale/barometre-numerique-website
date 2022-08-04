@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const db = require('../db')
-const {getStartDate} = require("./utils");
+const {getStartDate, getBetweenDateEasiWar} = require("./utils");
 
 // TODO: validate urls and args with https://joi.dev/ ? some other libraries include express-validator, but it's less used
 
@@ -28,10 +28,11 @@ router.get('/n-contact-total', (req, res, next) => {
 })
 
 /**
- * GET /api/ma-gendarmerie/n-contact-category/{timespan}
+ * GET /api/ma-gendarmerie/n-contact-category/{start_date}/{end_date}
  * @tags ma-gendarmerie
  * @summary Nombre de prise de contact par motifs (information, victime, signaler)
- * @param {string} timespan.path.required - enum:month,year
+ * @param {string} start_date.path.required - Date de début de la période sélectionnée au format YYYY-MM-DD.
+ * @param {string} end_date.path.required - Date de fin de la période sélectionnée au format YYYY-MM-DD.
  * @return {object} 200 - Réponse réussie.
  * @example response - 200 - Exemple de réponse réussie.
  * [
@@ -49,8 +50,10 @@ router.get('/n-contact-total', (req, res, next) => {
  *   }
  * ]
  */
-router.get('/n-contact-category/:timespan', (req, res, next) => {
-    let {startDate, endDate} = getStartDate(req.params.timespan);
+router.get('/n-contact-category/:start_date/:end_date', (req, res, next) => {
+    let startDate = req.params.start_date;
+    let endDate = req.params.end_date;
+
     db
         .query(
             'select category, sum(n_contact) as n_contact\n' +
@@ -65,11 +68,12 @@ router.get('/n-contact-category/:timespan', (req, res, next) => {
 })
 
 /**
- * GET /api/ma-gendarmerie/n-contact-timeline/{timespan}
+ * GET /api/ma-gendarmerie/n-contact-timeline/{start_date}/{end_date}
  * @tags ma-gendarmerie
  * @summary Nombre de prise de contact par unité de temps (jour si la période sélectionnée est la semaine ou le mois,
  *          mois si la période sélectionnée est l'année)
- * @param {string} timespan.path.required - enum:week,month,year
+ * @param {string} start_date.path.required - Date de début de la période au format YYYY-MM-DD
+ * @param {string} end_date.path.required - Date de fin de la période au format YYYY-MM-DD
  * @return {object} 200 - Réponse réussie.
  * @example response - 200 - Exemple de réponse réussie.
  * [
@@ -91,25 +95,19 @@ router.get('/n-contact-category/:timespan', (req, res, next) => {
  *     }
  * ]
  */
-router.get('/n-contact-timeline/:timespan', (req, res, next) => {
-    let {startDate, endDate} = getStartDate(req.params.timespan);
-    let query = '';
-    if (req.params.timespan === 'week' || req.params.timespan === 'month')
-        query = 'select date as time_dim, n_contact as cnt ' +
-            'from easiware_n_contacts_date ' +
-            'where $1  <= date and date < $2 ' +
-            'order by time_dim asc';
-    else if (req.params.timespan === 'year')
-        query = 'select date_trunc(\'month\', date)::date as time_dim, ' +
-            '       sum(n_contact) as cnt ' +
-            'from easiware_n_contacts_date ' +
-            'where $1  <= date and date < $2' +
-            'group by time_dim ' +
-            'order by time_dim asc ';
-    else
-        throw Error('timespan should be week, month or year');
+router.get('/n-contact-timeline/:start_date/:end_date', (req, res, next) => {
+    let startDate = req.params.start_date;
+    let endDate = req.params.end_date;
+    let timeDim = getBetweenDateEasiWar(startDate, endDate);
+
     db
-        .query(query, [startDate, endDate])
+        .query(
+            `select ${timeDim} as time_dim, sum(n_contact) as cnt\n` +
+            'from easiware_n_contacts_date\n' +
+            'where $1 <= date and date < $2\n' +
+            'group by time_dim order by time_dim asc\n',
+            [startDate, endDate]
+        )
         .then(result => res.send(result.rows))
         .catch(next);
 })

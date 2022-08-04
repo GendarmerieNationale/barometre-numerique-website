@@ -14,11 +14,9 @@
     <h2 class="fr-h6">Visites sur les <a
         href="https://www.gendarmerie.interieur.gouv.fr/recrutement/decouvrir-nos-metiers" target="_blank">fiches métiers</a></h2>
     <chart-parent>
-        <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
-            <tag-select-group data-tags="month,year"
-                              data-default-tag="month">
-            </tag-select-group>
-        </div>
+        <start-end-calendar 
+          timespan="year"
+        ></start-end-calendar>
 
         <div class="fr-mt-5w">
           <category-chart data-url="api/site-web/recrutement/fiches-metier"
@@ -74,11 +72,9 @@
 <div class="fr-container bn-block fr-my-5w">
   <h2 class="fr-h6">Nombre de visites sur le site de recrutement</h2>
   <chart-parent>
-    <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
-      <tag-select-group data-tags="day,week,month,year"
-                        data-default-tag="day">
-      </tag-select-group>
-    </div>
+    <start-end-calendar 
+      timespan="month"
+    ></start-end-calendar>
 
     <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
       <div class="fr-col-11 fr-col-sm-9 fr-col-md-8 fr-col-lg-7 fr-col-xl-6 fr-my-5w">

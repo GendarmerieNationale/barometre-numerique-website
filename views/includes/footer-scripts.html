@@ -6,50 +6,140 @@
 <script type="module" src="dsfr/dsfr.module.min.js"></script>
 <script type="text/javascript" nomodule src="dsfr/dsfr.nomodule.min.js"></script>
 
-<!--<script src="tarteaucitron.js-1.9.6/tarteaucitron.js"></script>-->
-<!--<script type="text/javascript">-->
-<!--  tarteaucitronCustomText = {-->
-<!--    alertBigPrivacy: '<span class="fr-h4">À propos des cookies sur gendarmerie nationale</span><br>Bienvenue ! Ce site utilise des cookies pour mesurer la fréquentation du site afin d\'en améliorer le fonctionnement et l\'administration et, avec votre accord, pour évaluer la performance des campagnes d\'informations gouvernementales et améliorer votre expérience utilisateur, ainsi que pour vous proposer des services interactifs fournis par nos partenaires. Nous conservons votre choix pendant 6 mois. Vous pouvez changer ce choix à tout moment en vous rendant sur <a href="https://www.gendarmerie.interieur.gouv.fr/politique-de-confidentialite" data-at-name="donnees_personnelles_et_cookies" data-at-type="action">la page Données personnelles et cookies</a>.',-->
-<!--    all: 'Préférences pour tous les services. <a href="https://www.gendarmerie.interieur.gouv.fr/politique-de-confidentialite" data-at-name="donnees_personnelles_et_cookies" data-at-type="action">Données personnelles et cookies</a>',-->
-<!--    fallback: 'est désactivé. <p class="fr-text&#45;&#45;xs">Autorisez le dépôt de cookies pour accéder à cette fonctionnalité.</p>',-->
-<!--    ads: {-->
-<!--      title: "Campagnes d'informations gouvernementales",-->
-<!--      details: "Les campagnes d'informations gouvernementales permettent le partage d'informations utiles diffusées dans le cadre de grandes campagnes d'information, ou en cas de crise."-->
-<!--    },-->
-<!--  };-->
+<script src="tarteaucitron.js-1.9.6/tarteaucitron.js"></script>
+<script type="text/javascript">
+  // AT Internet (exemption CNIL)
+  tarteaucitron.services.atinternetcnil = {
+    "key": "atinternetcnil",
+    "type": "analytic",
+    "name": "AT Internet exemption cnil",
+    "uri": "https://helpcentre.atinternet-solutions.com/hc/fr/categories/360002439300-Privacy-Centre",
+    "needConsent": false,
+    "safeanalytic": true,
+    "cookies": ['atidvisitor', 'atreman', 'atredir', 'atsession', 'atuserid'],
+    "js": function () {
+      "use strict";
 
-<!--  // Only difference with GN: externalJS is not set to true-->
-<!--  tarteaucitron.init({-->
-<!--    hashtag: "#consentement",-->
-<!--    bodyPosition: top,-->
-<!--    useExternalCss: true,-->
-<!--    orientation: "bottom",-->
-<!--    removeCredit: true,-->
-<!--    readmoreLink: "https://www.gendarmerie.interieur.gouv.fr/politique-de-confidentialite",-->
-<!--    mandatory: false,-->
-<!--    showIcon: false,-->
-<!--  });-->
+      if (tarteaucitron.user.atLibUrl === undefined) {
+        return;
+      }
 
-<!--  tarteaucitron.user.atLibUrl = 'https://tag.aticdn.net/616427/smarttag.js';-->
-<!--  tarteaucitron.user.atMore = function () { /* add here your optionnal ATInternet.Tracker.Tag configuration */-->
-<!--    window.tag.page.set({-->
-<!--      analytics_id: null,-->
-<!--      atinternet_id: "616427",-->
-<!--      level2: 20,-->
-<!--      name: "barometre-numerique",-->
-<!--      // pageId is defined in the pug-->
-<!--      chapter1: pageId,-->
-<!--      chapter2: "",-->
-<!--      chapter3: "",-->
-<!--    });-->
-<!--  };-->
-<!--  (tarteaucitron.job = tarteaucitron.job || []).push('atinternet');-->
-<!--  // &#45;&#45; GN site: should we use that?-->
-<!--  // (tarteaucitron.job = tarteaucitron.job || []).push('atinternetcnil');-->
-<!--  // (tarteaucitron.job = tarteaucitron.job || []).push('atinternethybride');-->
-<!--  // tarteaucitron.user = {-->
-<!--  //   addthisPubId: "ra-5048c178442d9e01",-->
-<!--  //   gtagUa: null,-->
-<!--  //   atLibUrl: "https://tag.aticdn.net/616427/smarttag.js"-->
-<!--  // }-->
-<!--</script>-->
+      tarteaucitron.addScript(tarteaucitron.user.atLibUrl, '', function () {
+
+        window.tag = new ATInternet.Tracker.Tag();
+
+        if (window.tag.privacy) {
+          window.tag.privacy.setVisitorMode('cnil', 'exempt');
+        }
+
+        if (window.tag.privacy && tarteaucitron.state.atinternethybride === true) {
+          window.tag.privacy.setVisitorOptin();
+        }
+
+        if (typeof tarteaucitron.user.atMore === 'function') {
+          tarteaucitron.user.atMore();
+        }
+
+        window.tag.dispatch();
+      });
+    },
+  };
+
+  // AT Internet
+  tarteaucitron.services.atinternethybride = {
+    "key": "atinternethybride",
+    "type": "analytic",
+    "name": "AT Internet",
+    "uri": "https://helpcentre.atinternet-solutions.com/hc/fr/categories/360002439300-Privacy-Centre",
+    "needConsent": true,
+    "cookies": ['atidvisitor', 'atreman', 'atredir', 'atsession', 'atuserid'],
+    "js": function () {
+      "use strict";
+      if (tarteaucitron.user.atLibUrl === undefined) {
+        return;
+      }
+
+      if (window.tag && window.tag.privacy) {
+        window.tag.privacy.setVisitorOptin();
+      }
+
+      if (tarteaucitron.state.atinternetcnil === false) {
+        tarteaucitron.addScript(tarteaucitron.user.atLibUrl, '', function () {
+          window.tag = new ATInternet.Tracker.Tag();
+
+          if (window.tag.privacy && tarteaucitron.state.atinternethybride === true) {
+            window.tag.privacy.setVisitorOptin();
+          }
+
+          if (typeof tarteaucitron.user.atMore === 'function') {
+            tarteaucitron.user.atMore();
+          }
+
+          window.tag.dispatch();
+        })
+      }
+      tarteaucitron.userInterface.respond(document.getElementById('atinternetcnilAllowed'), true);
+    },
+  };
+
+  tarteaucitronCustomText = {
+    alertBigPrivacy: '<span class="fr-h4">À propos des cookies sur gendarmerie nationale</span><br>Bienvenue ! Ce site utilise des cookies pour mesurer la fréquentation du site afin d\'en améliorer le fonctionnement et l\'administration et, avec votre accord, pour évaluer la performance des campagnes d\'informations gouvernementales et améliorer votre expérience utilisateur, ainsi que pour vous proposer des services interactifs fournis par nos partenaires. Nous conservons votre choix pendant 6 mois. Vous pouvez changer ce choix à tout moment en vous rendant sur <a href="https://www.gendarmerie.interieur.gouv.fr/politique-de-confidentialite" data-at-name="donnees_personnelles_et_cookies" data-at-type="action">la page Données personnelles et cookies</a>.',
+    all: 'Préférences pour tous les services. <a href="https://www.gendarmerie.interieur.gouv.fr/politique-de-confidentialite" data-at-name="donnees_personnelles_et_cookies" data-at-type="action">Données personnelles et cookies</a>',
+    fallback: 'est désactivé. <p class="fr-text--xs">Autorisez le dépôt de cookies pour accéder à cette fonctionnalité.</p>',
+    ads: {
+      title: "Campagnes d'informations gouvernementales",
+      details: "Les campagnes d'informations gouvernementales permettent le partage d'informations utiles diffusées dans le cadre de grandes campagnes d'information, ou en cas de crise."
+    },
+  };
+
+  tarteaucitron.events.load = function () {
+    // Inspired from GN Grand Public website, but we don't care about the optout button (only used in the GP Privacy Policy page)
+    let cnil_info = document.getElementById('tacCLatinternetcnil');
+    let cnil_buttons = document.querySelector('#atinternetcnilLine .tarteaucitronAsk');
+    cnil_info && cnil_info.insertAdjacentHTML('beforebegin', '<div style="font-size: 0.75rem;line-height: 1.5;color: #6a6a6a;margin-bottom: 0.5rem;">Vous pouvez désactiver la mesure d\'audience des données strictement nécessaires en cliquant sur le lien "en savoir plus"</div>')
+    // Simply remove the 'Activer' / 'Désactiver' buttons
+    cnil_buttons.remove();
+  }
+
+  // Override a couple functions from tarteaucitron, to work with the atinternetcnil custom service
+  tarteaucitron.userInterface.respondAllOriginal = tarteaucitron.userInterface.respondAll;
+  tarteaucitron.userInterface.respondAll = function (status, type) {
+    // Always call activate/deactivate All with safeAnalytics = true
+    // -> atinternetcnil stays to true when user clicks on Accept All from both the pop-up and the modal
+    return tarteaucitron.userInterface.respondAllOriginal(status, type, true)
+  }
+  tarteaucitron.userInterface.respondOriginal = tarteaucitron.userInterface.respond;
+  tarteaucitron.userInterface.respond = function (el, status) {
+    if (el)
+      // Since we removed the cnil_buttons element, first do this null check to avoid errors
+      tarteaucitron.userInterface.respondOriginal(el, status);
+  }
+
+  // Only difference with GN: externalJS is not set to true
+  tarteaucitron.init({
+    hashtag: "#consentement",
+    bodyPosition: top,
+    useExternalCss: true,
+    orientation: "bottom",
+    removeCredit: true,
+    readmoreLink: "https://www.gendarmerie.interieur.gouv.fr/politique-de-confidentialite",
+    mandatory: false,
+    showIcon: false,
+  });
+
+  tarteaucitron.user.atLibUrl = 'https://tag.aticdn.net/616427/smarttag.js';
+  tarteaucitron.user.atMore = function () { /* add here your optionnal ATInternet.Tracker.Tag configuration */
+    window.tag.page.set({
+      analytics_id: null,
+      atinternet_id: "616427",
+      level2: 20,
+      // pageId is defined in the pug
+      name: pageId,
+      chapter1: "barometre-numerique",
+      chapter2: "",
+      chapter3: "",
+    });
+  };
+  (tarteaucitron.job = tarteaucitron.job || []).push('atinternetcnil');
+  (tarteaucitron.job = tarteaucitron.job || []).push('atinternethybride');
+</script>

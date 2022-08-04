@@ -9,7 +9,7 @@ const authorizedReseaux = [
     'twitter',
     // 'linkedin',
     // 'instagram',
-    'youtube',
+    // 'youtube',
 ]
 
 // TODO: use something like this to validate input depending on the doc? https://github.com/BRIKEV/express-oas-validator
@@ -152,44 +152,45 @@ router.get('/n-followers-not-geo/:reseau', (req, res, next) => {
 })
 
 
-/**
- * GET /api/reseaux-sociaux/stats-yt/{pageUrl}
- * @tags reseaux-sociaux
- * @summary Statistiques pour une chaîne Youtube choisie
- * @param {string} pageUrl.path.required - URL de la chaîne
- * @return {object} 200 - Réponse réussie
- * @example response - 200 - Exemple de réponse réussie.
- * [
- *   {
- *     "page_name": "Gendarmerie nationale",
- *     "page_url": "https://www.youtube.com/channel/UCqxXM5u3U1jwrI36fSB9VuA",
- *     "n_followers": 37100,
- *     "n_videos": 381,
- *     "n_views": 5673614
- *   },
- *   {
- *     "page_name": "Pôle judiciaire de la gendarmerie nationale",
- *     "page_url": "https://www.youtube.com/channel/UCw8WjSeQmBGF4mqSpjlPwrw",
- *     "n_followers": 2523,
- *     "n_videos": 27,
- *     "n_views": 333205
- *   }
- * ]
- */
-router.get('/stats-yt/:pageUrl', (req, res, next) => {
-    db
-        .query(
-            'select page_name, ' +
-            '       page_url, ' +
-            '       n_followers, ' +
-            '       n_videos, ' +
-            '       n_views ' +
-            'from youtube_followers ' +
-            "where page_url=$1",
-            [req.params.pageUrl]
-        )
-        .then(result => res.send(result.rows[0]))
-        .catch(next)
-})
+// TODO: bring back once we add the Youtube ETL connector and we have up-to-date YT data
+// /**
+//  * GET /api/reseaux-sociaux/stats-yt/{pageUrl}
+//  * @tags reseaux-sociaux
+//  * @summary Statistiques pour une chaîne Youtube choisie
+//  * @param {string} pageUrl.path.required - URL de la chaîne
+//  * @return {object} 200 - Réponse réussie
+//  * @example response - 200 - Exemple de réponse réussie.
+//  * [
+//  *   {
+//  *     "page_name": "Gendarmerie nationale",
+//  *     "page_url": "https://www.youtube.com/channel/UCqxXM5u3U1jwrI36fSB9VuA",
+//  *     "n_followers": 37100,
+//  *     "n_videos": 381,
+//  *     "n_views": 5673614
+//  *   },
+//  *   {
+//  *     "page_name": "Pôle judiciaire de la gendarmerie nationale",
+//  *     "page_url": "https://www.youtube.com/channel/UCw8WjSeQmBGF4mqSpjlPwrw",
+//  *     "n_followers": 2523,
+//  *     "n_videos": 27,
+//  *     "n_views": 333205
+//  *   }
+//  * ]
+//  */
+// router.get('/stats-yt/:pageUrl', (req, res, next) => {
+//     db
+//         .query(
+//             'select page_name, ' +
+//             '       page_url, ' +
+//             '       n_followers, ' +
+//             '       n_videos, ' +
+//             '       n_views ' +
+//             'from youtube_followers ' +
+//             "where page_url=$1",
+//             [req.params.pageUrl]
+//         )
+//         .then(result => res.send(result.rows[0]))
+//         .catch(next)
+// })
 
 module.exports = router

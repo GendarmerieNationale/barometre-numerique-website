@@ -25,6 +25,19 @@ if (config.APP_PASSWORD !== '') {
   });
 }
 
+let setCacheHeaders = function (req, res, next) {
+  const period = 60;
+  console.log(req.method, req.originalUrl)
+  if (req.method === 'GET') {
+    res.set('Cache-Control', `max-age=${period}`)
+  } else {
+    res.set('Cache-Control', `no-cache, max-age=0`)
+  }
+  next()
+}
+app.use(setCacheHeaders)
+
+
 // todo: move all static files behind a '/static' root ?
 app.use(express.static('public'))
 

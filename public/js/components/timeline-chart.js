@@ -32,8 +32,17 @@ class TimelineChart extends HTMLElement {
         observer.observe(htmlRoot, {attributes: true});
     }
 
-    updateData(timespan) {
-        fetch(`${this.baseUrl}/${timespan}`)
+    updateData(startDate, endDate, timespan) {
+        let  url = '';
+
+        if (timespan === 'daily-affluence') {
+            url = `${this.baseUrl}`;
+        }
+        else {
+            url = `${this.baseUrl}/${startDate.value}/${endDate.value}`;
+        }
+
+        fetch(url)
             .then(response => response.json())
             .then(data => {
                 if (data.length === 0) {
@@ -53,7 +62,8 @@ class TimelineChart extends HTMLElement {
                 let {labels, values} = transforms.formatForHorizontalBarChart(
                     data, `${this.labelKey}`, `${this.valueKey}`
                 );
-                labels = transforms.formatTimelineLabels(labels, timespan);
+                const tag = transforms.getTimespanBetweenDate(startDate, endDate);
+                labels = transforms.formatTimelineLabels(labels, tag);
                 this.makeHorizontalBarChart(values, labels)
             })
             .catch(e => console.error(e));

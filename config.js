@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 const config = {
+    CACHE_CONTROL_MAX_AGE: process.env.CACHE_CONTROL_MAX_AGE || 60,
     APP_OFFLINE: process.env.APP_OFFLINE ? (process.env.APP_OFFLINE === 'true') : false,
     APP_USERNAME: process.env.APP_USERNAME || 'user',
     APP_PASSWORD: process.env.APP_PASSWORD || '',

@@ -180,6 +180,54 @@ function recrutementFeminisationPercentage(data, statut) {
     return ''
 }
 
+function formatDate(date) {
+    return date.toISOString().slice(0,10)
+}
+
+function getStartDate(timespan, endDate = null) {
+    endDate = endDate || new Date('2022-05-01T11:00:00.000Z');
+    let startDate = new Date(endDate)
+
+    if (timespan === 'day')
+        startDate.setHours(0)
+    else if (timespan === 'week')
+        startDate.setDate(startDate.getDate() - 7)
+    else if (timespan === 'month')
+        startDate.setMonth(startDate.getMonth() - 1)
+    else if (timespan === 'year')
+        startDate.setFullYear(startDate.getFullYear() - 1)
+
+    startDate = formatDate(startDate);
+    endDate = formatDate(endDate);
+
+    return {
+        startDate,
+        endDate
+    }
+}
+
+function isNumber(n) {
+    return /^-?[\d.]+(?:e-?\d+)?$/.test(n);
+}
+
+function getTimespanBetweenDate(startDate, endDate) {
+    const date1 = new Date(startDate);
+    const date2 = new Date(endDate);
+    const difference_in_Time = date2.getTime() - date1.getTime();
+    const difference_in_Days = difference_in_Time / (1000 * 3600 * 24);
+
+    if (difference_in_Days < 1)
+        return 'daily-affluence'
+    else if (difference_in_Days < 2)
+        return 'day'
+    else if (difference_in_Days < 7)
+        return 'week'
+    else if (difference_in_Days < 30)
+        return 'month'
+    else
+        return 'year'
+}
+
 export default {
     // Standard transforms
     formatForHorizontalBarChart,
@@ -187,6 +235,9 @@ export default {
     formatNumber,
     formatEuro,
     formatDuration,
+    getStartDate,
+    isNumber,
+    getTimespanBetweenDate,
 
     // Specific transforms for a single chart
     maGendarmerieNContactMotif: function (data) {

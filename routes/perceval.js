@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const db = require('../db')
-const {getStartDate} = require("./utils");
+const {getStartDate, getBetweenDate} = require("./utils");
 
 /**
  * @tags perceval - Plateforme de signalement de fraude à la carte bancaire
@@ -28,12 +28,13 @@ router.get('/n-signalements-total', (req, res, next) => {
 })
 
 /**
- * GET /api/perceval/signalements-timeline/{timespan}
+ * GET /api/perceval/signalements-timeline/{start_date}/{end_date}
  * @tags perceval
  * @summary Nombre de signalements et montants totaux par unité de temps
  *          (jour si la période sélectionnée est la semaine ou le mois,
  *          mois si la période sélectionnée est l'année)
- * @param {string} timespan.path.required - enum:week,month,year
+ * @param {string} start_date.path.required - Date de début de la période sélectionnée au format YYYY-MM-DD.
+ * @param {string} end_date.path.required - Date de fin de la période sélectionnée au format YYYY-MM-DD.
  * @return {object} 200 - Réponse réussie.
  * @example response - 200 - Exemple de réponse réussie.
  * [
@@ -50,19 +51,15 @@ router.get('/n-signalements-total', (req, res, next) => {
  * ]
  */
 // todo: fix request with timespan=year
-router.get('/signalements-timeline/:timespan', (req, res, next) => {
-    let {startDate, endDate} = getStartDate(req.params.timespan, new Date('2022-02-01T11:00:00.000Z'));
-    let time_sql_col = '';
-    if (req.params.timespan === 'week' || req.params.timespan === 'month')
-        time_sql_col = 'date';
-    else if (req.params.timespan === 'year')
-        time_sql_col = 'month';
-    else
-        throw Error('timespan should be week, month or year')
+router.get('/signalements-timeline/:start_date/:end_date', (req, res, next) => {
+    time_sql_col = getBetweenDate(req.params.start_date, req.params.end_date);
+    let startDate = req.params.start_date;
+    let endDate = req.params.end_date;
+
     db
         .query(
-            `select ${time_sql_col} as time_dim, ` +
-            '   sum(count) as n_signalements, sum(amount) as amount ' +
+            `select ${time_sql_col} as time_dim, `+
+            'sum(count) as n_signalements, sum(amount) as amount ' +
             'from perceval_daily ' +
             'where $1 <= date and date < $2' +
             'group by time_dim ' +
@@ -92,10 +89,11 @@ router.get('/montant-moyen', (req, res, next) => {
 })
 
 /**
- * GET /api/perceval/age-category/{timespan}
+ * GET /api/perceval/age-category/{start_date}/{end_date}
  * @tags perceval
  * @summary Nombre de signalements par catégorie d'age de la victime
- * @param {string} timespan.path.required - enum:month,year
+ * @param {string} start_date.path.required - Date de début de la période sélectionnée au format YYYY-MM-DD.
+ * @param {string} end_date.path.required - Date de fin de la période sélectionnée au format YYYY-MM-DD.
  * @return {object} 200 - Réponse réussie.
  * @example response - 200 - Exemple de réponse réussie.
  * [
@@ -109,8 +107,10 @@ router.get('/montant-moyen', (req, res, next) => {
  *   }
  * ]
  */
-router.get('/age-category/:timespan', (req, res, next) => {
-    let {startDate, endDate} = getStartDate(req.params.timespan, new Date('2022-02-01T11:00:00.000Z'));
+router.get('/age-category/:start_date/:end_date', (req, res, next) => {
+    let startDate = req.params.start_date;
+    let endDate = req.params.end_date;
+
     db
         .query(
             'select age_cat, sum(count) as n_signalements ' +
@@ -139,11 +139,11 @@ router.get('/age-category/:timespan', (req, res, next) => {
  * @return {object} 200 - Réponse réussie.
  * @example response - 200 - Exemple de réponse réussie.
  */
-router.get('/map', (req, res, next) => {
+ router.get('/map', (req, res, next) => {
     db
         .query(
             'select dpt_code, geo_dpt_iso, ' +
-            '   geo_dpt_name, sum(count) as n_signalements ' +
+            'geo_dpt_name, sum(count) as n_signalements ' +
             'from perceval_geo ' +
             'group by dpt_code, geo_dpt_iso, geo_dpt_name ' +
             'order by n_signalements desc'
@@ -163,7 +163,7 @@ router.get('/map', (req, res, next) => {
  * @return {object} 200 - Réponse réussie.
  * @example response - 200 - Exemple de réponse réussie.
  */
-router.get('/map-detail/:geoIso', (req, res, next) => {
+ router.get('/map-detail/:geoIso', (req, res, next) => {
     let query = '';
     let params = [];
     if (req.params.geoIso === 'gn') {
@@ -171,7 +171,7 @@ router.get('/map-detail/:geoIso', (req, res, next) => {
             'from perceval_geo ';
     } else {
         query = 'select dpt_code, geo_dpt_iso, ' +
-            '   geo_dpt_name, sum(count) as n_signalements ' +
+            'geo_dpt_name, sum(count) as n_signalements ' +
             'from perceval_geo ' +
             'where geo_dpt_iso = $1 ' +
             'group by dpt_code, geo_dpt_iso, geo_dpt_name ';

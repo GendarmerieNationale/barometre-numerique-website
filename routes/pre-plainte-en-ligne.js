@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const db = require('../db')
-const {getStartDate} = require("./utils");
+const {getBetweenDate} = require("./utils");
 
 /**
  * @tags pre-plainte-en-ligne - Plateforme de préplainte en ligne
@@ -28,12 +28,13 @@ router.get('/n-preplaintes-total', (req, res, next) => {
 })
 
 /**
- * GET /api/pre-plainte-en-ligne/preplaintes-timeline/{timespan}
+ * GET /api/pre-plainte-en-ligne/preplaintes-timeline/{start_date}/{end_date}
  * @tags pre-plainte-en-ligne
  * @summary Nombre de préplaintes déposées par unité de temps
  *          (jour si la période sélectionnée est la semaine ou le mois,
  *          mois si la période sélectionnée est l'année)
- * @param {string} timespan.path.required - enum:week,month,year
+ * @param {string} start_date.path.required - Date de début de la période sélectionnée au format YYYY-MM-DD.
+ * @param {string} end_date.path.required - Date de fin de la période sélectionnée au format YYYY-MM-DD.
  * @return {object} 200 - Réponse réussie.
  * @example response - 200 - Exemple de réponse réussie.
  * [
@@ -52,19 +53,15 @@ router.get('/n-preplaintes-total', (req, res, next) => {
  * ]
  */
 // todo: fix request with timespan=year
-router.get('/preplaintes-timeline/:timespan', (req, res, next) => {
-    let {startDate, endDate} = getStartDate(req.params.timespan, new Date('2021-12-01T11:00:00.000Z'));
-    let time_sql_col = '';
-    if (req.params.timespan === 'week' || req.params.timespan === 'month')
-        time_sql_col = 'date';
-    else if (req.params.timespan === 'year')
-        time_sql_col = 'month';
-    else
-        throw Error('timespan should be week, month or year')
+router.get('/preplaintes-timeline/:start_date/:end_date', (req, res, next) => {
+    let time_sql_col = getBetweenDate(req.params.start_date, req.params.end_date);
+    let startDate = req.params.start_date;
+    let endDate = req.params.end_date;
+
     db
         .query(
             `select ${time_sql_col} as time_dim, ` +
-            '   sum(n_preplaintes) as n_preplaintes ' +
+            'sum(n_preplaintes) as n_preplaintes ' +
             'from ppel_daily ' +
             'where $1 <= date and date < $2' +
             'group by time_dim ' +
@@ -97,10 +94,11 @@ router.get('/duree-moyenne', (req, res, next) => {
 })
 
 /**
- * GET /api/pre-plainte-en-ligne/person-type/{timespan}
+ * GET /api/pre-plainte-en-ligne/person-type/{start_date}/{end_date}
  * @tags pre-plainte-en-ligne
  * @summary Nombre de préplaintes déposées par type de personne : personne morale ou physique
- * @param {string} timespan.path.required - enum:month,year
+ * @param {string} start_date.path.required - Date de début de la période sélectionnée au format YYYY-MM-DD.
+ * @param {string} end_date.path.required - Date de fin de la période sélectionnée au format YYYY-MM-DD. 
  * @return {object} 200 - Réponse réussie.
  * @example response - 200 - Exemple de réponse réussie.
  * [
@@ -114,8 +112,10 @@ router.get('/duree-moyenne', (req, res, next) => {
  *   }
  * ]
  */
-router.get('/person-type/:timespan', (req, res, next) => {
-    let {startDate, endDate} = getStartDate(req.params.timespan, new Date('2021-12-01T11:00:00.000Z'));
+router.get('/person-type/:start_date/:end_date', (req, res, next) => {
+    let startDate = req.params.start_date;
+    let endDate = req.params.end_date;
+
     db
         .query(
             'select type_personne, sum(n_preplaintes) as n_preplaintes ' +
@@ -156,11 +156,11 @@ router.get('/person-type/:timespan', (req, res, next) => {
  *   }
  * ]
  */
-router.get('/map', (req, res, next) => {
+ router.get('/map', (req, res, next) => {
     db
         .query(
             'select dpt_code, geo_dpt_iso, ' +
-            '   geo_dpt_name, sum(n_preplaintes) as n_preplaintes ' +
+            'geo_dpt_name, sum(n_preplaintes) as n_preplaintes ' +
             'from ppel_geo ' +
             'group by dpt_code, geo_dpt_iso, geo_dpt_name ' +
             'order by n_preplaintes desc',
@@ -180,7 +180,7 @@ router.get('/map', (req, res, next) => {
  * @return {object} 200 - Réponse réussie.
  * @example response - 200 - Exemple de réponse réussie.
  */
-router.get('/map-detail/:geoIso', (req, res, next) => {
+ router.get('/map-detail/:geoIso', (req, res, next) => {
     let query = '';
     let params = [];
     if (req.params.geoIso === 'gn') {
@@ -188,7 +188,7 @@ router.get('/map-detail/:geoIso', (req, res, next) => {
             'from ppel_geo ';
     } else {
         query = 'select dpt_code, geo_dpt_iso, ' +
-            '   geo_dpt_name, sum(n_preplaintes) as n_preplaintes ' +
+            'geo_dpt_name, sum(n_preplaintes) as n_preplaintes ' +
             'from ppel_geo ' +
             'where geo_dpt_iso = $1 ' +
             'group by dpt_code, geo_dpt_iso, geo_dpt_name ';

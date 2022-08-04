@@ -19,6 +19,66 @@ function getStartDate(timespan, endDate = null) {
     return {startDate, endDate}
 }
 
+function getBetweenDate(startDate, endDate) {
+    const date1 = new Date(startDate);
+    const date2 = new Date(endDate);
+    const difference_in_Time = date2.getTime() - date1.getTime();
+    const difference_in_Days = difference_in_Time / (1000 * 3600 * 24);
+    
+    if (difference_in_Days < 365)
+        return 'date'
+    else
+        return 'month'
+}
+
+function getBetweenDateTime(startDate, endDate) {
+    const date1 = new Date(startDate);
+    const date2 = new Date(endDate);
+    const difference_in_Time = date2.getTime() - date1.getTime();
+    const difference_in_Days = difference_in_Time / (1000 * 3600 * 24);
+    
+    if (difference_in_Days < 2)
+        return 'datetime'
+    else if (difference_in_Days < 30)
+        return 'datetime::date'
+    else if (difference_in_Days < 365)
+        return 'datetime::date'
+    else
+        return 'date_trunc(\'month\',datetime)::date'
+}
+
+function getBetweenHour(startDate, endDate) {
+    const date1 = new Date(startDate);
+    const date2 = new Date(endDate);
+    const difference_in_Time = date2.getTime() - date1.getTime();
+    const difference_in_Days = difference_in_Time / (1000 * 3600 * 24);
+    
+    if (difference_in_Days < 2)
+        return 'hour'
+    else if (difference_in_Days < 30)
+        return 'day'
+    else if (difference_in_Days < 365)
+        return 'day'
+    else
+        return 'month'
+}
+
+function getBetweenDateEasiWar(startDate, endDate) {
+    const date1 = new Date(startDate);
+    const date2 = new Date(endDate);
+    const difference_in_Time = date2.getTime() - date1.getTime();
+    const difference_in_Days = difference_in_Time / (1000 * 3600 * 24);
+
+    if (difference_in_Days < 365)
+        return 'date'
+    else
+        return 'date_trunc(\'month\', date)::date'
+}
+
 module.exports = {
-    getStartDate: getStartDate
+    getStartDate: getStartDate,
+    getBetweenDate: getBetweenDate,
+    getBetweenDateTime: getBetweenDateTime,
+    getBetweenHour: getBetweenHour,
+    getBetweenDateEasiWar: getBetweenDateEasiWar
 }

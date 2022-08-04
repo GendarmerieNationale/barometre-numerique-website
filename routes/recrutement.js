@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const db = require('../db')
-const {getStartDate} = require("./utils");
+const {getBetweenHour} = require("./utils");
 
 
 /**
@@ -32,12 +32,13 @@ router.get('/n-visits-total', (req, res, next) => {
 })
 
 /**
- * GET /api/site-web/recrutement/fiches-metier/{timespan}
+ * GET /api/site-web/recrutement/fiches-metier/{start_date}/{end_date}
  * @tags site-web
  * @summary Nombre de visites par fiche métier, sur la période sélectionnée. Cela concerne uniquement les pages
  *            de l'onglet 'Découvrir nos métiers' sur le site Gendarmerie.
+ * @param {string} start_date.path.required - Date de début de la période sélectionnée au format YYYY-MM-DD.
+ * @param {string} end_date.path.required - Date de fin de la période sélectionnée au format YYYY-MM-DD.
  * @param {string} maxResults.query - Nombre de lignes à retourner (10 par défaut, 50 max)
- * @param {string} timespan.path.required - enum:month,year
  * @return {object} 200 - Réponse réussie
  * @example response - 200 - Exemple de réponse réussie
  * [
@@ -55,9 +56,11 @@ router.get('/n-visits-total', (req, res, next) => {
  *   }
  * ]
  */
-router.get('/fiches-metier/:timespan', (req, res, next) => {
+router.get('/fiches-metier/:start_date/:end_date', (req, res, next) => {
+    let startDate = req.params.start_date;
+    let endDate = req.params.end_date;
     let maxResults = req.query.maxResults ? Math.min(req.query.maxResults, 50) : 10;
-    let {startDate, endDate} = getStartDate(req.params.timespan);
+
     db
         .query(
             'select metier_name, sum(visit_count) as n_visits ' +
@@ -74,15 +77,12 @@ router.get('/fiches-metier/:timespan', (req, res, next) => {
 
 
 /**
- * GET /api/site-web/recrutement/n-visits-timeline/{timespan}
+ * GET /api/site-web/recrutement/n-visits-timeline/{start_date}/{end_date}
  * @tags site-web
  * @summary Nombre de visites par unité de temps, sur la période sélectionnée. Cela concerne toutes les pages du
  *      sous-site de recrutement.
- * @param {string} timespan.path.required - enum:day,week,month,year - En fonction de la période sélectionnée, le
- *      nombre de visites sera agrégé par:
- *          heure si `timespan='day'`,
- *          jour si `timespan='week'` ou `'month'`,
- *          mois si `timespan='year'`.
+ * @param {string} start_date.path.required - Date de début de la période sélectionnée au format YYYY-MM-DD.
+ * @param {string} end_date.path.required - Date de fin de la période sélectionnée au format YYYY-MM-DD.
  * @return {object} 200 - Réponse réussie
  * @example response - 200 - Exemple de réponse réussie
  * [
@@ -100,20 +100,16 @@ router.get('/fiches-metier/:timespan', (req, res, next) => {
  *   }
  * ]
  */
-router.get('/n-visits-timeline/:timespan', (req, res, next) => {
-    let {startDate, endDate} = getStartDate(req.params.timespan);
-    let timeDim = '';
-    if (req.params.timespan === 'day')
-        timeDim = 'hour';
-    else if (req.params.timespan === 'week' || req.params.timespan === 'month')
-        timeDim = 'day';
-    else if (req.params.timespan === 'year')
-        timeDim = 'month';
+router.get('/n-visits-timeline/:start_date/:end_date', (req, res, next) => {
+    let startDate = req.params.start_date;
+    let endDate = req.params.end_date;
+    let timeDim = getBetweenHour(startDate, endDate);
+    console.log(timeDim);
     db
         .query(
             `select date_trunc($3, datetime) as time_dim, ` +
-            '       sum(visit_count)            as visit_count ' +
-            'from analytics.atinternet_visits_per_hour ' +
+            'sum(visit_count) as visit_count ' +
+            'from atinternet_visits_per_hour ' +
             'where subsite=\'recrutement\' and $1 <= datetime and datetime < $2 ' +
             'group by time_dim ' +
             'order by time_dim asc',

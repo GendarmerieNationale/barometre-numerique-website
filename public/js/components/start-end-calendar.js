@@ -19,8 +19,8 @@ class StartEndCalendar extends HTMLElement {
             this.endDate();
         }
         else {
-            this.querySelector("input[id='input-calendar-start']").setAttribute('value', this.dateStart);
-            this.querySelector("input[id='input-calendar-end']").setAttribute('value', this.dateEnd);
+            this.querySelector("input[id='input-calendar-start']").value = this.dateStart;
+            this.querySelector("input[id='input-calendar-end']").value = this.dateEnd;
         }
     }
 
@@ -38,13 +38,13 @@ class StartEndCalendar extends HTMLElement {
         else if (timespan === 'year')
             date.setFullYear(date.getFullYear() - 1)
 
-        input.setAttribute('value', date.toISOString().split('T')[0]);
+        input.value = date.toISOString().split('T')[0];
 
         this.addEventListener('change', () => {
-            inputMax.setAttribute('min', input.value);
+            inputMax.min = input.value;
 
             if (input.value > inputMax.value)
-                inputMax.setAttribute('value', input.value);
+                inputMax.value = input.value;
         });
     }
 
@@ -53,8 +53,8 @@ class StartEndCalendar extends HTMLElement {
         const input = this.querySelector("input[id='input-calendar-end']");
         const inputMin = this.querySelector("input[id='input-calendar-start']");
 
-        input.setAttribute('value', date.toISOString().split('T')[0]);
-        input.setAttribute('min', inputMin.value);
+        input.value = date.toISOString().split('T')[0];
+        input.min = inputMin.value;
     }
 
     render() {

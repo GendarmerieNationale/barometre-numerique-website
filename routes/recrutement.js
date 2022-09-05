@@ -22,6 +22,7 @@ const {getBetweenHour} = require("./utils");
  */
 router.get('/n-visits-total', (req, res, next) => {
     let year = req.query.year ? req.query.year : (new Date()).getFullYear();
+    
     db
         .query('select sum(visit_count) as visit_count ' +
             'from atinternet_visits_per_subsite ' +
@@ -104,7 +105,7 @@ router.get('/n-visits-timeline/:start_date/:end_date', (req, res, next) => {
     let startDate = req.params.start_date;
     let endDate = req.params.end_date;
     let timeDim = getBetweenHour(startDate, endDate);
-    console.log(timeDim);
+
     db
         .query(
             `select date_trunc($3, datetime) as time_dim, ` +

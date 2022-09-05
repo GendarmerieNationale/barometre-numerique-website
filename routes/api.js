@@ -42,6 +42,7 @@ const options = {
     apiDocsPath: '/v3/docs',
     // Set non-required fields as nullable by default
     notRequiredAsNullable: false,
+    servers: [{ url: '/barometre-numerique' }]
 };
 
 expressJSDocSwagger(router)(options);

@@ -14,12 +14,14 @@ class ChartParent extends HTMLElement {
                     chart.updateData(start_date, end_date, defaultTag);
             })
 
+            // Update chart with new data when the start and end date inputs are changed
             this.addEventListener('change', () => {
                 let start_date = this.querySelector("input[id='input-calendar-start']");
                 let end_date = this.querySelector("input[id='input-calendar-end']");
                 chart.updateData(start_date, end_date, defaultTag);
             })
 
+            // Update chart with new data when the tag select group is changed
             this.addEventListener('update-data', (event) => {
                 chart.updateData(null, null, event.detail.tag);
             })
@@ -29,23 +31,27 @@ class ChartParent extends HTMLElement {
         let timelineCharts = this.querySelectorAll('timeline-chart');
         timelineCharts.forEach(chart => {
             
+            // Update chart with initial data
             window.addEventListener('load', () => {
                 let start_date = this.querySelector("input[id='input-calendar-start']");
                 let end_date = this.querySelector("input[id='input-calendar-end']");
                 chart.updateData(start_date, end_date, defaultTag);
             })
 
+            // Update chart with new data when the start and end date inputs are changed
             this.addEventListener('change', () => {
                 let start_date = this.querySelector("input[id='input-calendar-start']");
                 let end_date = this.querySelector("input[id='input-calendar-end']");
                 chart.updateData(start_date, end_date, defaultTag);
             })
 
+            // Update chart with new data when the tag select group is changed
             this.addEventListener('update-data', (event) => {
                 chart.updateData(null, null, event.detail.tag);
             })
         });
 
+        // Update chart with new data when the tag select group is changed
         let featureFigures = this.querySelectorAll('feature-figure');
         featureFigures.forEach(featFigure => {
             featFigure.updateData(defaultTag);

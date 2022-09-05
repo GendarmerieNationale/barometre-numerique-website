@@ -7,6 +7,7 @@ class StartEndCalendar extends HTMLElement {
         this.timespan = "";
     }
 
+    // When the component is added to the DOM, render the component and add the start and end date to the inputs
     connectedCallback() {
         this.dateStart = this.getAttribute('date-start');
         this.dateEnd = this.getAttribute('date-end');
@@ -14,6 +15,7 @@ class StartEndCalendar extends HTMLElement {
 
         this.render();
 
+        // If the start date is not defined, add the current date to the start date input or add the date defined in the attribute
         if (this.dateStart === null) {
             this.startDate(this.timespan);
             this.endDate();
@@ -24,6 +26,7 @@ class StartEndCalendar extends HTMLElement {
         }
     }
 
+    // Add date to the start date input and set the end date input to the current date if the start date is greater than the end date
     startDate(timespan) {
         const date = new Date();
         const input = this.querySelector("input[id='input-calendar-start']");
@@ -48,6 +51,7 @@ class StartEndCalendar extends HTMLElement {
         });
     }
 
+    // Add date to the end date input
     endDate() {
         const date = new Date();
         const input = this.querySelector("input[id='input-calendar-end']");
@@ -57,6 +61,7 @@ class StartEndCalendar extends HTMLElement {
         input.min = inputMin.value;
     }
 
+    // Render the component
     render() {
         this.innerHTML = `
         <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
